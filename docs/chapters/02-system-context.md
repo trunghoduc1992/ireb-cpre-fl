@@ -72,21 +72,7 @@ A **system** is a coherent set of elements (hardware, software, processes, peopl
 
 The **system boundary** separates the SuD from everything else:
 
-```mermaid
-graph TD
-    subgraph ENV ["Environment"]
-        subgraph CTX ["System Context"]
-            subgraph SYS ["System under Development (SuD)"]
-                core["  "]
-            end
-        end
-    end
-
-    style core fill:none,stroke:none
-    style SYS fill:#4f6df5,color:#fff,stroke:#3a5bef,stroke-width:2px
-    style CTX fill:#b3c4fc,color:#333,stroke:#5a74f3,stroke-width:2px,stroke-dasharray:5 5
-    style ENV fill:#e8ecff,color:#333,stroke:#999,stroke-width:2px
-```
+<MermaidChart code="graph%20TD%0A%20%20%20%20subgraph%20ENV%20%5B%22Environment%22%5D%0A%20%20%20%20%20%20%20%20subgraph%20CTX%20%5B%22System%20Context%22%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20subgraph%20SYS%20%5B%22System%20under%20Development%20(SuD)%22%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20core%5B%22%20%20%22%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20end%0A%20%20%20%20%20%20%20%20end%0A%20%20%20%20end%0A%0A%20%20%20%20style%20core%20fill%3Anone%2Cstroke%3Anone%0A%20%20%20%20style%20SYS%20fill%3A%234f6df5%2Ccolor%3A%23fff%2Cstroke%3A%233a5bef%2Cstroke-width%3A2px%0A%20%20%20%20style%20CTX%20fill%3A%23b3c4fc%2Ccolor%3A%23333%2Cstroke%3A%235a74f3%2Cstroke-width%3A2px%2Cstroke-dasharray%3A5%205%0A%20%20%20%20style%20ENV%20fill%3A%23e8ecff%2Ccolor%3A%23333%2Cstroke%3A%23999%2Cstroke-width%3A2px" />
 
 <div class="key-concept">
 
@@ -212,19 +198,7 @@ A **context diagram** visualizes the system, its boundary, and the external enti
 - External entities (stakeholders, systems) around it
 - Data flows or interactions between them
 
-```mermaid
-graph LR
-    C([Customer]) -->|browse, order, pay| S
-    SP([Shipping Provider]) <-->|shipping requests| S
-    S[Online Shop\nSuD] <-->|payment processing| PG([Payment Gateway])
-    W([Warehouse Staff]) <-->|order data, reports| S
-
-    style S fill:#4f6df5,color:#fff,stroke:#3a5bef,stroke-width:2px
-    style C fill:#fff,stroke:#333
-    style SP fill:#fff,stroke:#333
-    style PG fill:#fff,stroke:#333
-    style W fill:#fff,stroke:#333
-```
+<MermaidChart code="graph%20LR%0A%20%20%20%20C(%5BCustomer%5D)%20--%3E%7Cbrowse%2C%20order%2C%20pay%7C%20S%0A%20%20%20%20SP(%5BShipping%20Provider%5D)%20%3C--%3E%7Cshipping%20requests%7C%20S%0A%20%20%20%20S%5BOnline%20Shop%5CnSuD%5D%20%3C--%3E%7Cpayment%20processing%7C%20PG(%5BPayment%20Gateway%5D)%0A%20%20%20%20W(%5BWarehouse%20Staff%5D)%20%3C--%3E%7Corder%20data%2C%20reports%7C%20S%0A%0A%20%20%20%20style%20S%20fill%3A%234f6df5%2Ccolor%3A%23fff%2Cstroke%3A%233a5bef%2Cstroke-width%3A2px%0A%20%20%20%20style%20C%20fill%3A%23fff%2Cstroke%3A%23333%0A%20%20%20%20style%20SP%20fill%3A%23fff%2Cstroke%3A%23333%0A%20%20%20%20style%20PG%20fill%3A%23fff%2Cstroke%3A%23333%0A%20%20%20%20style%20W%20fill%3A%23fff%2Cstroke%3A%23333" />
 
 ## Practice Quiz
 

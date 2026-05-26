@@ -164,14 +164,7 @@ Checking that documented requirements are correct, complete, and consistent, and
 ### 4. Management
 Handling changes to requirements, maintaining traceability, prioritizing requirements, and versioning.
 
-```mermaid
-graph LR
-    E[Elicitation] --> D[Documentation]
-    D --> V[Validation & Negotiation]
-    V --> M[Management]
-    M --> E
-    M --> V
-```
+<MermaidChart code="graph%20LR%0A%20%20%20%20E%5BElicitation%5D%20--%3E%20D%5BDocumentation%5D%0A%20%20%20%20D%20--%3E%20V%5BValidation%20%26%20Negotiation%5D%0A%20%20%20%20V%20--%3E%20M%5BManagement%5D%0A%20%20%20%20M%20--%3E%20E%0A%20%20%20%20M%20--%3E%20V" />
 
 ::: info Key Point
 These activities are **not sequential**. In practice, they happen iteratively and concurrently. You might elicit new requirements while validating existing ones, or discover documentation gaps during management.

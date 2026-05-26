@@ -126,45 +126,28 @@ Use case diagrams show **what the system does** from the user's perspective — 
 | **System boundary** | Rectangle | The boundary of the SuD |
 | **Association** | Solid line | An actor participates in a use case |
 
-```mermaid
-graph LR
-    subgraph Online Shop - SuD
-        UC1((Browse\nProducts))
-        UC2((Place\nOrder))
-    end
-    Customer -->|uses| UC1
-    Customer -->|uses| UC2
-```
+<MermaidChart code="graph%20LR%0A%20%20%20%20subgraph%20Online%20Shop%20-%20SuD%0A%20%20%20%20%20%20%20%20UC1((Browse%5CnProducts))%0A%20%20%20%20%20%20%20%20UC2((Place%5CnOrder))%0A%20%20%20%20end%0A%20%20%20%20Customer%20--%3E%7Cuses%7C%20UC1%0A%20%20%20%20Customer%20--%3E%7Cuses%7C%20UC2" />
 
 ### Relationships Between Use Cases
 
 #### Include (<<include\>\>)
 The base use case **always** executes the included use case.
 
-```mermaid
-graph LR
-    PO((Place Order)) -- "«include»" --> VP((Verify Payment))
-```
+<MermaidChart code="graph%20LR%0A%20%20%20%20PO((Place%20Order))%20--%20%22%C2%ABinclude%C2%BB%22%20--%3E%20VP((Verify%20Payment))" />
 
 "Place Order" always includes "Verify Payment" — you can't place an order without payment verification.
 
 #### Extend (<<extend\>\>)
 The extending use case **optionally** adds behavior to the base use case.
 
-```mermaid
-graph RL
-    AC((Apply Coupon)) -- "«extend»" --> PO((Place Order))
-```
+<MermaidChart code="graph%20RL%0A%20%20%20%20AC((Apply%20Coupon))%20--%20%22%C2%ABextend%C2%BB%22%20--%3E%20PO((Place%20Order))" />
 
 "Apply Coupon" optionally extends "Place Order" — the customer may or may not have a coupon.
 
 #### Actor Generalization
 One actor inherits the use cases of another.
 
-```mermaid
-graph BT
-    Admin -->|inherits| User
-```
+<MermaidChart code="graph%20BT%0A%20%20%20%20Admin%20--%3E%7Cinherits%7C%20User" />
 
 Admin is a specialized User — Admin can do everything a User can, plus admin-specific functions.
 
@@ -206,49 +189,13 @@ Activity diagrams model **processes and workflows** — the step-by-step flow of
 
 ### Example: Order Processing
 
-```mermaid
-flowchart TD
-    Start(( )) --> Receive[Receive Order]
-    Receive --> Check{Stock available?}
-    Check -->|Yes| Fork1[ ]
-    Check -->|No| Notify[Notify Customer]
-    Notify --> End1(( ))
-    Fork1 --> Pack[Pack Items]
-    Fork1 --> Invoice[Send Invoice]
-    Pack --> Join1[ ]
-    Invoice --> Join1
-    Join1 --> Ship[Ship Order]
-    Ship --> End2(( ))
-
-    style Start fill:#000,stroke:#000,color:#000
-    style End1 fill:#000,stroke:#000,color:#000
-    style End2 fill:#000,stroke:#000,color:#000
-    style Fork1 fill:#333,stroke:#333,color:#333
-    style Join1 fill:#333,stroke:#333,color:#333
-```
+<MermaidChart code="flowchart%20TD%0A%20%20%20%20Start((%20))%20--%3E%20Receive%5BReceive%20Order%5D%0A%20%20%20%20Receive%20--%3E%20Check%7BStock%20available%3F%7D%0A%20%20%20%20Check%20--%3E%7CYes%7C%20Fork1%5B%20%5D%0A%20%20%20%20Check%20--%3E%7CNo%7C%20Notify%5BNotify%20Customer%5D%0A%20%20%20%20Notify%20--%3E%20End1((%20))%0A%20%20%20%20Fork1%20--%3E%20Pack%5BPack%20Items%5D%0A%20%20%20%20Fork1%20--%3E%20Invoice%5BSend%20Invoice%5D%0A%20%20%20%20Pack%20--%3E%20Join1%5B%20%5D%0A%20%20%20%20Invoice%20--%3E%20Join1%0A%20%20%20%20Join1%20--%3E%20Ship%5BShip%20Order%5D%0A%20%20%20%20Ship%20--%3E%20End2((%20))%0A%0A%20%20%20%20style%20Start%20fill%3A%23000%2Cstroke%3A%23000%2Ccolor%3A%23000%0A%20%20%20%20style%20End1%20fill%3A%23000%2Cstroke%3A%23000%2Ccolor%3A%23000%0A%20%20%20%20style%20End2%20fill%3A%23000%2Cstroke%3A%23000%2Ccolor%3A%23000%0A%20%20%20%20style%20Fork1%20fill%3A%23333%2Cstroke%3A%23333%2Ccolor%3A%23333%0A%20%20%20%20style%20Join1%20fill%3A%23333%2Cstroke%3A%23333%2Ccolor%3A%23333" />
 
 ### Swim Lanes
 
 Swim lanes partition activities by **responsibility** — who performs each step.
 
-```mermaid
-flowchart LR
-    subgraph Customer
-        A[Submit Order]
-        F[Receive Email]
-    end
-    subgraph System
-        B[Validate Order]
-        E[Send Confirmation Email]
-    end
-    subgraph Warehouse
-        C[Pick Items]
-        D[Pack & Ship]
-    end
-
-    A --> B --> C --> D
-    B --> E --> F
-```
+<MermaidChart code="flowchart%20LR%0A%20%20%20%20subgraph%20Customer%0A%20%20%20%20%20%20%20%20A%5BSubmit%20Order%5D%0A%20%20%20%20%20%20%20%20F%5BReceive%20Email%5D%0A%20%20%20%20end%0A%20%20%20%20subgraph%20System%0A%20%20%20%20%20%20%20%20B%5BValidate%20Order%5D%0A%20%20%20%20%20%20%20%20E%5BSend%20Confirmation%20Email%5D%0A%20%20%20%20end%0A%20%20%20%20subgraph%20Warehouse%0A%20%20%20%20%20%20%20%20C%5BPick%20Items%5D%0A%20%20%20%20%20%20%20%20D%5BPack%20%26%20Ship%5D%0A%20%20%20%20end%0A%0A%20%20%20%20A%20--%3E%20B%20--%3E%20C%20--%3E%20D%0A%20%20%20%20B%20--%3E%20E%20--%3E%20F" />
 
 ::: tip From Your Experience
 As a tester, activity diagrams map directly to test scenarios — each path through the diagram is a test case. As a BA, swim lanes help you assign responsibilities to roles.
@@ -278,22 +225,10 @@ event [guard] / action
 
 ### Example: Order Lifecycle
 
-```mermaid
-stateDiagram-v2
-    [*] --> New
-    New --> Confirmed : payment received
-    New --> Cancelled : cancelled
-    Confirmed --> Shipped : shipped
-    Shipped --> Delivered : delivered
-    Cancelled --> [*]
-    Delivered --> [*]
-```
+<MermaidChart code="stateDiagram-v2%0A%20%20%20%20%5B*%5D%20--%3E%20New%0A%20%20%20%20New%20--%3E%20Confirmed%20%3A%20payment%20received%0A%20%20%20%20New%20--%3E%20Cancelled%20%3A%20cancelled%0A%20%20%20%20Confirmed%20--%3E%20Shipped%20%3A%20shipped%0A%20%20%20%20Shipped%20--%3E%20Delivered%20%3A%20delivered%0A%20%20%20%20Cancelled%20--%3E%20%5B*%5D%0A%20%20%20%20Delivered%20--%3E%20%5B*%5D" />
 
 With guard conditions:
-```mermaid
-stateDiagram-v2
-    Delivered --> Returned : return requested [within 30 days] / create return label
-```
+<MermaidChart code="stateDiagram-v2%0A%20%20%20%20Delivered%20--%3E%20Returned%20%3A%20return%20requested%20%5Bwithin%2030%20days%5D%20%2F%20create%20return%20label" />
 
 <div class="exam-tip">
   <strong>Exam tip:</strong> Be able to read transition labels in the format <code>event [guard] / action</code>. Questions often ask what event triggers a specific transition or what guard condition applies.
@@ -326,70 +261,19 @@ Class diagrams model the **data structure** of the domain — what entities exis
 
 ### Example: E-Commerce Domain Model
 
-```mermaid
-classDiagram
-    Customer "1" --> "0..*" Order : places
-    Order "1" --> "1..*" OrderItem : contains
-    OrderItem "0..*" --> "1" Product : refers to
-
-    class Customer {
-        name
-        email
-        address
-    }
-    class Order {
-        orderDate
-        status
-        totalAmount
-    }
-    class OrderItem {
-        quantity
-        unitPrice
-    }
-    class Product {
-        name
-        description
-        price
-    }
-```
+<MermaidChart code="classDiagram%0A%20%20%20%20Customer%20%221%22%20--%3E%20%220..*%22%20Order%20%3A%20places%0A%20%20%20%20Order%20%221%22%20--%3E%20%221..*%22%20OrderItem%20%3A%20contains%0A%20%20%20%20OrderItem%20%220..*%22%20--%3E%20%221%22%20Product%20%3A%20refers%20to%0A%0A%20%20%20%20class%20Customer%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20email%0A%20%20%20%20%20%20%20%20address%0A%20%20%20%20%7D%0A%20%20%20%20class%20Order%20%7B%0A%20%20%20%20%20%20%20%20orderDate%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20totalAmount%0A%20%20%20%20%7D%0A%20%20%20%20class%20OrderItem%20%7B%0A%20%20%20%20%20%20%20%20quantity%0A%20%20%20%20%20%20%20%20unitPrice%0A%20%20%20%20%7D%0A%20%20%20%20class%20Product%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20price%0A%20%20%20%20%7D" />
 
 Reading: "One Customer places zero or more Orders. Each Order contains one or more OrderItems. Each OrderItem refers to one Product."
 
 ### Generalization (Inheritance)
 
-```mermaid
-classDiagram
-    Payment <|-- CreditCard
-    Payment <|-- BankTransfer
-
-    class Payment {
-        amount
-        date
-    }
-    class CreditCard {
-        cardNumber
-        expiry
-    }
-    class BankTransfer {
-        accountNumber
-        bankCode
-    }
-```
+<MermaidChart code="classDiagram%0A%20%20%20%20Payment%20%3C%7C--%20CreditCard%0A%20%20%20%20Payment%20%3C%7C--%20BankTransfer%0A%0A%20%20%20%20class%20Payment%20%7B%0A%20%20%20%20%20%20%20%20amount%0A%20%20%20%20%20%20%20%20date%0A%20%20%20%20%7D%0A%20%20%20%20class%20CreditCard%20%7B%0A%20%20%20%20%20%20%20%20cardNumber%0A%20%20%20%20%20%20%20%20expiry%0A%20%20%20%20%7D%0A%20%20%20%20class%20BankTransfer%20%7B%0A%20%20%20%20%20%20%20%20accountNumber%0A%20%20%20%20%20%20%20%20bankCode%0A%20%20%20%20%7D" />
 
 CreditCard and BankTransfer are specialized types of Payment — they inherit `amount` and `date`.
 
 ### Aggregation vs. Composition
 
-```mermaid
-classDiagram
-    Department o-- Employee : aggregation
-    Order2 *-- OrderItem2 : composition
-
-    class Department { }
-    class Employee { }
-    class Order2["Order"] { }
-    class OrderItem2["OrderItem"] { }
-```
+<MermaidChart code="classDiagram%0A%20%20%20%20Department%20o--%20Employee%20%3A%20aggregation%0A%20%20%20%20Order2%20*--%20OrderItem2%20%3A%20composition%0A%0A%20%20%20%20class%20Department%20%7B%20%7D%0A%20%20%20%20class%20Employee%20%7B%20%7D%0A%20%20%20%20class%20Order2%5B%22Order%22%5D%20%7B%20%7D%0A%20%20%20%20class%20OrderItem2%5B%22OrderItem%22%5D%20%7B%20%7D" />
 
 ::: warning Key Exam Distinction
 **Aggregation** (hollow diamond): the part can exist independently of the whole.
@@ -402,14 +286,7 @@ Goal models capture the **why** behind requirements — what stakeholders want t
 
 Goals are decomposed into sub-goals, which eventually lead to concrete requirements.
 
-```mermaid
-graph TD
-    G1[Increase online sales]
-    G1 --> G2[Improve user experience]
-    G1 --> G3[Reduce cart abandonment]
-    G2 --> R1["Fast page loads (< 2 sec)"]
-    G3 --> R2["Simplified checkout (3 steps)"]
-```
+<MermaidChart code="graph%20TD%0A%20%20%20%20G1%5BIncrease%20online%20sales%5D%0A%20%20%20%20G1%20--%3E%20G2%5BImprove%20user%20experience%5D%0A%20%20%20%20G1%20--%3E%20G3%5BReduce%20cart%20abandonment%5D%0A%20%20%20%20G2%20--%3E%20R1%5B%22Fast%20page%20loads%20(%3C%202%20sec)%22%5D%0A%20%20%20%20G3%20--%3E%20R2%5B%22Simplified%20checkout%20(3%20steps)%22%5D" />
 
 Goal models help:
 - **Justify** requirements — every requirement traces back to a business goal

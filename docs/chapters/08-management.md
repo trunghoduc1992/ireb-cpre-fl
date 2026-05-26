@@ -153,15 +153,7 @@ Classifies requirements by their impact on **customer satisfaction**:
 | **Performance (Linear)** | Satisfaction proportional to quality | Dissatisfaction proportional to lack | Search speed |
 | **Excitement (Delighters)** | Strong satisfaction — unexpected bonus | Not missed — wasn't expected | AI-powered recommendations |
 
-```mermaid
-quadrantChart
-    title Kano Model
-    x-axis "Not Fulfilled" --> "Fully Fulfilled"
-    y-axis "Dissatisfied" --> "Delighted"
-    Excitement features: [0.35, 0.90]
-    Performance features: [0.70, 0.70]
-    Basic features: [0.70, 0.30]
-```
+<MermaidChart code="quadrantChart%0A%20%20%20%20title%20Kano%20Model%0A%20%20%20%20x-axis%20%22Not%20Fulfilled%22%20--%3E%20%22Fully%20Fulfilled%22%0A%20%20%20%20y-axis%20%22Dissatisfied%22%20--%3E%20%22Delighted%22%0A%20%20%20%20Excitement%20features%3A%20%5B0.35%2C%200.90%5D%0A%20%20%20%20Performance%20features%3A%20%5B0.70%2C%200.70%5D%0A%20%20%20%20Basic%20features%3A%20%5B0.70%2C%200.30%5D" />
 
 ::: info Key Insight
 Basic requirements are "invisible" when present but cause major dissatisfaction when absent. Excitement features create differentiation. Performance requirements scale linearly.
@@ -205,12 +197,7 @@ Result: REQ-A and REQ-C tie at highest priority; REQ-B is lowest.
 
 ### Types of Traceability
 
-```mermaid
-graph LR
-    S["Sources\nStakeholders\nGoals\nRegulations"] -->|pre-requirements\ntraceability| R["Requirements\nREQ-042"]
-    R -->|post-requirements\ntraceability| A["Artifacts\nDesign Docs\nSource Code\nTest Cases"]
-    R <-->|inter-requirement\ntraceability| R2["REQ-043"]
-```
+<MermaidChart code="graph%20LR%0A%20%20%20%20S%5B%22Sources%5CnStakeholders%5CnGoals%5CnRegulations%22%5D%20--%3E%7Cpre-requirements%5Cntraceability%7C%20R%5B%22Requirements%5CnREQ-042%22%5D%0A%20%20%20%20R%20--%3E%7Cpost-requirements%5Cntraceability%7C%20A%5B%22Artifacts%5CnDesign%20Docs%5CnSource%20Code%5CnTest%20Cases%22%5D%0A%20%20%20%20R%20%3C--%3E%7Cinter-requirement%5Cntraceability%7C%20R2%5B%22REQ-043%22%5D" />
 
 | Traceability Type | Direction | Question Answered |
 |-------------------|-----------|-------------------|
@@ -272,14 +259,7 @@ Changes to baselined requirements must follow a controlled process:
 
 </div>
 
-```mermaid
-graph LR
-    CR[Change\nRequest] --> IA[Impact\nAnalysis]
-    IA --> EV[Evaluate\nCost/Benefit]
-    EV --> DE[Approve /\nReject]
-    DE --> IM[Update\nArtifacts]
-    IM --> VE[Verify\nChanges]
-```
+<MermaidChart code="graph%20LR%0A%20%20%20%20CR%5BChange%5CnRequest%5D%20--%3E%20IA%5BImpact%5CnAnalysis%5D%0A%20%20%20%20IA%20--%3E%20EV%5BEvaluate%5CnCost%2FBenefit%5D%0A%20%20%20%20EV%20--%3E%20DE%5BApprove%20%2F%5CnReject%5D%0A%20%20%20%20DE%20--%3E%20IM%5BUpdate%5CnArtifacts%5D%0A%20%20%20%20IM%20--%3E%20VE%5BVerify%5CnChanges%5D" />
 
 ### Change Control Board (CCB)
 
