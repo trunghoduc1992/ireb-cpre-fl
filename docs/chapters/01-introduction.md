@@ -164,22 +164,13 @@ Checking that documented requirements are correct, complete, and consistent, and
 ### 4. Management
 Handling changes to requirements, maintaining traceability, prioritizing requirements, and versioning.
 
-```
-┌──────────────────────────────────────────────────┐
-│             Requirements Engineering              │
-│                                                    │
-│  ┌────────────┐      ┌───────────────┐            │
-│  │ Elicitation │─────▶│ Documentation │            │
-│  └────────────┘      └───────────────┘            │
-│        ▲                    │                      │
-│        │                    ▼                      │
-│  ┌─────────────┐     ┌─────────────────┐          │
-│  │  Management  │◀────│   Validation &  │          │
-│  │              │────▶│  Negotiation    │          │
-│  └─────────────┘     └─────────────────┘          │
-│                                                    │
-│  These activities are iterative and concurrent.    │
-└──────────────────────────────────────────────────┘
+```mermaid
+graph LR
+    E[Elicitation] --> D[Documentation]
+    D --> V[Validation & Negotiation]
+    V --> M[Management]
+    M --> E
+    M --> V
 ```
 
 ::: info Key Point

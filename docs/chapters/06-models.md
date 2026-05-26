@@ -126,22 +126,14 @@ Use case diagrams show **what the system does** from the user's perspective — 
 | **System boundary** | Rectangle | The boundary of the SuD |
 | **Association** | Solid line | An actor participates in a use case |
 
-```
-┌─────────────────────────────────────────┐
-│            Online Shop (SuD)            │
-│                                         │
-│    ┌───────────┐     ┌──────────────┐   │
-│    │  Browse    │     │   Place      │   │
-│    │  Products  │     │   Order      │   │
-│    └───────────┘     └──────────────┘   │
-│         │                   │           │
-│         │                   │           │
-└─────────┼───────────────────┼───────────┘
-          │                   │
-       ┌──┴──┐             ┌──┴──┐
-       │     │             │     │
-       │ 🧑  │             │ 🧑  │
-       Customer            Customer
+```mermaid
+graph LR
+    subgraph Online Shop - SuD
+        UC1((Browse\nProducts))
+        UC2((Place\nOrder))
+    end
+    Customer -->|uses| UC1
+    Customer -->|uses| UC2
 ```
 
 ### Relationships Between Use Cases
@@ -149,11 +141,9 @@ Use case diagrams show **what the system does** from the user's perspective — 
 #### Include (<<include\>\>)
 The base use case **always** executes the included use case.
 
-```
-  ┌──────────┐   <<include>>   ┌──────────────┐
-  │  Place    │───────────────▶│   Verify      │
-  │  Order    │                │   Payment     │
-  └──────────┘                 └──────────────┘
+```mermaid
+graph LR
+    PO((Place Order)) -- "«include»" --> VP((Verify Payment))
 ```
 
 "Place Order" always includes "Verify Payment" — you can't place an order without payment verification.
@@ -161,11 +151,9 @@ The base use case **always** executes the included use case.
 #### Extend (<<extend\>\>)
 The extending use case **optionally** adds behavior to the base use case.
 
-```
-  ┌──────────┐   <<extend>>    ┌──────────────┐
-  │  Place    │◀───────────────│   Apply       │
-  │  Order    │                │   Coupon      │
-  └──────────┘                 └──────────────┘
+```mermaid
+graph RL
+    AC((Apply Coupon)) -- "«extend»" --> PO((Place Order))
 ```
 
 "Apply Coupon" optionally extends "Place Order" — the customer may or may not have a coupon.
@@ -173,15 +161,9 @@ The extending use case **optionally** adds behavior to the base use case.
 #### Actor Generalization
 One actor inherits the use cases of another.
 
-```
-       ┌──────┐
-       │ User │
-       └──┬───┘
-          △
-          │
-       ┌──┴───┐
-       │Admin  │
-       └───────┘
+```mermaid
+graph BT
+    Admin -->|inherits| User
 ```
 
 Admin is a specialized User — Admin can do everything a User can, plus admin-specific functions.
@@ -224,57 +206,48 @@ Activity diagrams model **processes and workflows** — the step-by-step flow of
 
 ### Example: Order Processing
 
-```
-          ●
-          │
-          ▼
-   ┌──────────────┐
-   │ Receive Order │
-   └──────┬───────┘
-          │
-          ◇ Stock available?
-         ╱ ╲
-      [yes]  [no]
-       │       │
-       ▼       ▼
-   ━━━━━━━  ┌──────────┐
-   (fork)   │  Notify   │
-    │   │   │ Customer  │
-    ▼   ▼   └─────┬────┘
-┌──────┐┌──────┐  │
-│Pack  ││Send  │  ▼
-│Items ││Invoice│  ◉
-└──┬───┘└──┬───┘
-   │       │
-   ━━━━━━━
-   (join)
-      │
-      ▼
-┌──────────┐
-│  Ship    │
-│  Order   │
-└────┬─────┘
-     │
-     ▼
-     ◉
+```mermaid
+flowchart TD
+    Start(( )) --> Receive[Receive Order]
+    Receive --> Check{Stock available?}
+    Check -->|Yes| Fork1[ ]
+    Check -->|No| Notify[Notify Customer]
+    Notify --> End1(( ))
+    Fork1 --> Pack[Pack Items]
+    Fork1 --> Invoice[Send Invoice]
+    Pack --> Join1[ ]
+    Invoice --> Join1
+    Join1 --> Ship[Ship Order]
+    Ship --> End2(( ))
+
+    style Start fill:#000,stroke:#000,color:#000
+    style End1 fill:#000,stroke:#000,color:#000
+    style End2 fill:#000,stroke:#000,color:#000
+    style Fork1 fill:#333,stroke:#333,color:#333
+    style Join1 fill:#333,stroke:#333,color:#333
 ```
 
 ### Swim Lanes
 
 Swim lanes partition activities by **responsibility** — who performs each step.
 
-```
-│  Customer    │   System      │   Warehouse   │
-│              │               │               │
-│  ● Submit    │               │               │
-│    Order ────▶ Validate ─────▶ Pick Items    │
-│              │  Order        │       │       │
-│              │    │          │       ▼       │
-│              │    ▼          │  Pack & Ship  │
-│              │  Send         │       │       │
-│              │  Confirmation │       ▼       │
-│  Receive ◀───  Email        │    ◉          │
-│  Email       │               │               │
+```mermaid
+flowchart LR
+    subgraph Customer
+        A[Submit Order]
+        F[Receive Email]
+    end
+    subgraph System
+        B[Validate Order]
+        E[Send Confirmation Email]
+    end
+    subgraph Warehouse
+        C[Pick Items]
+        D[Pack & Ship]
+    end
+
+    A --> B --> C --> D
+    B --> E --> F
 ```
 
 ::: tip From Your Experience
@@ -305,36 +278,21 @@ event [guard] / action
 
 ### Example: Order Lifecycle
 
-```
-     ●
-     │
-     ▼
- ┌────────┐  payment received   ┌───────────┐
- │  New    │────────────────────▶│ Confirmed │
- └────────┘                      └─────┬─────┘
-     │                                 │
-     │ cancelled                       │ shipped
-     ▼                                 ▼
- ┌────────┐                      ┌───────────┐
- │Cancelled│                     │  Shipped   │
- └────────┘                      └─────┬─────┘
-     ◉                                 │
-                                       │ delivered
-                                       ▼
-                                 ┌───────────┐
-                                 │ Delivered  │
-                                 └─────┬─────┘
-                                       │
-                                       ▼
-                                       ◉
+```mermaid
+stateDiagram-v2
+    [*] --> New
+    New --> Confirmed : payment received
+    New --> Cancelled : cancelled
+    Confirmed --> Shipped : shipped
+    Shipped --> Delivered : delivered
+    Cancelled --> [*]
+    Delivered --> [*]
 ```
 
 With guard conditions:
-```
-  ┌────────┐  return requested [within 30 days] / create return label
-  │Delivered│──────────────────────────────────────────────────────▶┌────────┐
-  └────────┘                                                       │Returned│
-                                                                   └────────┘
+```mermaid
+stateDiagram-v2
+    Delivered --> Returned : return requested [within 30 days] / create return label
 ```
 
 <div class="exam-tip">
@@ -368,68 +326,69 @@ Class diagrams model the **data structure** of the domain — what entities exis
 
 ### Example: E-Commerce Domain Model
 
-```
-┌───────────────┐     1    places    0..*  ┌───────────────┐
-│   Customer    │─────────────────────────│     Order     │
-├───────────────┤                          ├───────────────┤
-│ name          │                          │ orderDate     │
-│ email         │                          │ status        │
-│ address       │                          │ totalAmount   │
-└───────────────┘                          └───────┬───────┘
-                                                   │
-                                              1..* │ contains
-                                                   │
-                                           ┌───────┴───────┐
-                                           │   OrderItem   │
-                                           ├───────────────┤
-                                           │ quantity      │
-                                           │ unitPrice     │
-                                           └───────┬───────┘
-                                                   │
-                                              0..* │ refers to
-                                                   │
-                                           ┌───────┴───────┐
-                                           │    Product    │
-                                           ├───────────────┤
-                                           │ name          │
-                                           │ description   │
-                                           │ price         │
-                                           └───────────────┘
+```mermaid
+classDiagram
+    Customer "1" --> "0..*" Order : places
+    Order "1" --> "1..*" OrderItem : contains
+    OrderItem "0..*" --> "1" Product : refers to
+
+    class Customer {
+        name
+        email
+        address
+    }
+    class Order {
+        orderDate
+        status
+        totalAmount
+    }
+    class OrderItem {
+        quantity
+        unitPrice
+    }
+    class Product {
+        name
+        description
+        price
+    }
 ```
 
 Reading: "One Customer places zero or more Orders. Each Order contains one or more OrderItems. Each OrderItem refers to one Product."
 
 ### Generalization (Inheritance)
 
-```
-         ┌────────────┐
-         │   Payment   │
-         ├────────────┤
-         │ amount      │
-         │ date        │
-         └─────△──────┘
-              ╱ ╲
-             ╱   ╲
-  ┌──────────┐   ┌──────────────┐
-  │CreditCard│   │ BankTransfer │
-  ├──────────┤   ├──────────────┤
-  │ cardNumber│  │ accountNumber│
-  │ expiry    │  │ bankCode     │
-  └──────────┘   └──────────────┘
+```mermaid
+classDiagram
+    Payment <|-- CreditCard
+    Payment <|-- BankTransfer
+
+    class Payment {
+        amount
+        date
+    }
+    class CreditCard {
+        cardNumber
+        expiry
+    }
+    class BankTransfer {
+        accountNumber
+        bankCode
+    }
 ```
 
 CreditCard and BankTransfer are specialized types of Payment — they inherit `amount` and `date`.
 
 ### Aggregation vs. Composition
 
-```
-  ┌──────────┐ ◇────────── ┌──────────┐
-  │Department│              │ Employee │     Aggregation: employees
-  └──────────┘              └──────────┘     can exist without department
+```mermaid
+classDiagram
+    Department o-- Employee : aggregation
+    Order2 *-- OrderItem2 : composition
 
-  ┌──────────┐ ◆────────── ┌──────────┐
-  │  Order   │              │OrderItem │     Composition: order items
-  └──────────┘              └──────────┘     cannot exist without order
+    class Department { }
+    class Employee { }
+    class Order2["Order"] { }
+    class OrderItem2["OrderItem"] { }
 ```
 
 ::: warning Key Exam Distinction
@@ -443,16 +402,13 @@ Goal models capture the **why** behind requirements — what stakeholders want t
 
 Goals are decomposed into sub-goals, which eventually lead to concrete requirements.
 
-```
-         Increase online sales
-            ╱          ╲
-           ╱            ╲
-  Improve user        Reduce cart
-  experience          abandonment
-      │                    │
-      ▼                    ▼
-  Fast page loads     Simplified
-  (< 2 sec)          checkout (3 steps)
+```mermaid
+graph TD
+    G1[Increase online sales]
+    G1 --> G2[Improve user experience]
+    G1 --> G3[Reduce cart abandonment]
+    G2 --> R1["Fast page loads (< 2 sec)"]
+    G3 --> R2["Simplified checkout (3 steps)"]
 ```
 
 Goal models help:

@@ -153,21 +153,14 @@ Classifies requirements by their impact on **customer satisfaction**:
 | **Performance (Linear)** | Satisfaction proportional to quality | Dissatisfaction proportional to lack | Search speed |
 | **Excitement (Delighters)** | Strong satisfaction — unexpected bonus | Not missed — wasn't expected | AI-powered recommendations |
 
-```
-Satisfaction
-    ▲
-    │          ╱ Excitement
-    │        ╱
-    │      ╱    ╱ Performance
-    │    ╱    ╱
-    │  ╱    ╱
-────┼─╱───╱──────────▶ Fulfillment
-    │╱  ╱
-    │ ╱
-    │╱
-   ╱│  Basic
-  ╱ │
-    │
+```mermaid
+quadrantChart
+    title Kano Model
+    x-axis "Not Fulfilled" --> "Fully Fulfilled"
+    y-axis "Dissatisfied" --> "Delighted"
+    Excitement features: [0.35, 0.90]
+    Performance features: [0.70, 0.70]
+    Basic features: [0.70, 0.30]
 ```
 
 ::: info Key Insight
@@ -212,20 +205,11 @@ Result: REQ-A and REQ-C tie at highest priority; REQ-B is lowest.
 
 ### Types of Traceability
 
-```
- Sources                Requirements              Artifacts
-┌──────────┐          ┌──────────────┐          ┌──────────────┐
-│Stakeholder│─────────▶│  REQ-042     │─────────▶│ Design Doc   │
-│Goals      │   pre-   │              │   post-  │ Source Code  │
-│Regulations│  trace   │              │  trace   │ Test Cases   │
-└──────────┘          └──────────────┘          └──────────────┘
-                             │
-                     inter-requirement
-                        traceability
-                             │
-                      ┌──────┴─────┐
-                      │  REQ-043   │
-                      └────────────┘
+```mermaid
+graph LR
+    S["Sources\nStakeholders\nGoals\nRegulations"] -->|pre-requirements\ntraceability| R["Requirements\nREQ-042"]
+    R -->|post-requirements\ntraceability| A["Artifacts\nDesign Docs\nSource Code\nTest Cases"]
+    R <-->|inter-requirement\ntraceability| R2["REQ-043"]
 ```
 
 | Traceability Type | Direction | Question Answered |
@@ -288,10 +272,13 @@ Changes to baselined requirements must follow a controlled process:
 
 </div>
 
-```
- Change       Impact       Evaluate     Decision     Implement     Verify
- Request  ──▶ Analysis ──▶  Cost/   ──▶ Approve/ ──▶  Update   ──▶ Confirm
-                            Benefit     Reject       Artifacts     Changes
+```mermaid
+graph LR
+    CR[Change\nRequest] --> IA[Impact\nAnalysis]
+    IA --> EV[Evaluate\nCost/Benefit]
+    EV --> DE[Approve /\nReject]
+    DE --> IM[Update\nArtifacts]
+    IM --> VE[Verify\nChanges]
 ```
 
 ### Change Control Board (CCB)

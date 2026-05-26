@@ -72,24 +72,20 @@ A **system** is a coherent set of elements (hardware, software, processes, peopl
 
 The **system boundary** separates the SuD from everything else:
 
-```
-┌─────────────────────────────────────────────────────┐
-│                 Environment                          │
-│                                                      │
-│    ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐           │
-│    │        System Context              │           │
-│                                          │           │
-│    │   ┌──────────────────────┐         │           │
-│        │                      │          │           │
-│    │   │  System under Dev    │         │           │
-│        │      (SuD)           │          │           │
-│    │   │                      │         │           │
-│        └──────────────────────┘          │           │
-│    │        System Boundary ↑           │           │
-│     ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─            │
-│             Context Boundary ↑                       │
-│                                                      │
-└─────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph ENV ["Environment"]
+        subgraph CTX ["System Context"]
+            subgraph SYS ["System under Development (SuD)"]
+                core["  "]
+            end
+        end
+    end
+
+    style core fill:none,stroke:none
+    style SYS fill:#4f6df5,color:#fff,stroke:#3a5bef,stroke-width:2px
+    style CTX fill:#b3c4fc,color:#333,stroke:#5a74f3,stroke-width:2px,stroke-dasharray:5 5
+    style ENV fill:#e8ecff,color:#333,stroke:#999,stroke-width:2px
 ```
 
 <div class="key-concept">
@@ -216,23 +212,18 @@ A **context diagram** visualizes the system, its boundary, and the external enti
 - External entities (stakeholders, systems) around it
 - Data flows or interactions between them
 
-```
-                    ┌──────────┐
-                    │ Customer │
-                    └────┬─────┘
-                         │ browse, order, pay
-                         ▼
-  ┌──────────┐    ┌──────────────┐    ┌─────────────┐
-  │ Shipping │◀───│  Online Shop  │───▶│   Payment   │
-  │ Provider │    │    (SuD)      │    │   Gateway   │
-  └──────────┘    └──────────────┘    └─────────────┘
-                         │
-                         │ order data, reports
-                         ▼
-                  ┌──────────────┐
-                  │  Warehouse   │
-                  │    Staff     │
-                  └──────────────┘
+```mermaid
+graph LR
+    C([Customer]) -->|browse, order, pay| S
+    SP([Shipping Provider]) <-->|shipping requests| S
+    S[Online Shop\nSuD] <-->|payment processing| PG([Payment Gateway])
+    W([Warehouse Staff]) <-->|order data, reports| S
+
+    style S fill:#4f6df5,color:#fff,stroke:#3a5bef,stroke-width:2px
+    style C fill:#fff,stroke:#333
+    style SP fill:#fff,stroke:#333
+    style PG fill:#fff,stroke:#333
+    style W fill:#fff,stroke:#333
 ```
 
 ## Practice Quiz
