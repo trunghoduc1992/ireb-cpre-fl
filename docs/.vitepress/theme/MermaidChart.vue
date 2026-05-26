@@ -19,9 +19,8 @@ async function render() {
       theme: isDark.value ? 'dark' : 'default',
       securityLevel: 'loose',
     })
-    const decoded = decodeURIComponent(props.code)
     const id = 'mermaid-' + Math.random().toString(36).slice(2, 9)
-    const { svg } = await mermaid.render(id, decoded)
+    const { svg } = await mermaid.render(id, props.code)
     el.value.innerHTML = svg
   } catch (e) {
     el.value.innerHTML = '<pre style="color:red">' + e.message + '</pre>'
