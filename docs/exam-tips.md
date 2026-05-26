@@ -5,9 +5,10 @@
 | Detail | Value |
 |--------|-------|
 | **Duration** | 75 minutes |
-| **Questions** | 45 multiple-choice |
-| **Passing score** | 60% (27 of 45 correct) |
-| **Question types** | Single-select and multiple-select |
+| **Questions** | ~46 |
+| **Total points** | ~70 (questions are worth 1 or 2 points) |
+| **Passing score** | 70% (~49 of 70 points) |
+| **Question types** | Single-select, pick-two, and True/False matrix |
 | **Allowed aids** | None (closed book) |
 | **Languages** | Multiple (English, German, etc.) |
 
@@ -27,9 +28,18 @@ Documentation chapters carry the most weight — focus your study there.
 
 ## Key Strategies
 
+### Understand the Question Types
+
+The exam uses three question formats:
+
+- **A-type (single-select):** Pick 1 correct answer from 4 options. Worth 1 point.
+- **P-type (pick-two):** Pick exactly 2 correct answers from 5 options. Worth 1–2 points.
+- **K-type (True/False matrix):** Decide whether each of 4 statements is True or False. Worth 2 points. All 4 must be correct to earn points.
+
 ### Read the Question Carefully
 - Watch for qualifiers like "always", "never", "can", "must" — they change the meaning.
 - For multi-select questions, the number of correct answers is stated (e.g., "select two").
+- For K-type questions, read each statement independently — some may be obviously true while others require careful thought.
 
 ### Know the IREB Definitions
 The exam uses IREB's specific definitions. For example:

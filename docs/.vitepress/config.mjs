@@ -13,6 +13,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Chapters', link: '/chapters/01-introduction' },
+      { text: 'Sample Exams', link: '/exams/exam-1' },
       { text: 'Glossary', link: '/glossary' },
       { text: 'Exam Tips', link: '/exam-tips' },
       { text: 'Study Plan', link: '/study-plan' },
@@ -37,6 +38,13 @@ export default defineConfig({
           { text: '7. Validation & Negotiation', link: '/chapters/07-validation' },
           { text: '8. Requirements Management', link: '/chapters/08-management' },
           { text: '9. Tool Support', link: '/chapters/09-tools' },
+        ],
+      },
+      {
+        text: 'Sample Exams',
+        items: [
+          { text: 'Exam 1 (46 questions)', link: '/exams/exam-1' },
+          { text: 'Exam 2 (46 questions)', link: '/exams/exam-2' },
         ],
       },
       {
