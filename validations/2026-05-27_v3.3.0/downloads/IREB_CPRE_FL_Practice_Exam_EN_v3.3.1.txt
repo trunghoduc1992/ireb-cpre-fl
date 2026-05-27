@@ -1,0 +1,1451 @@
+
+--- PAGE 1 ---
+ 
+Foundation Level | Examination 
+© IREB 
+1 | 26 
+ 
+IREB Examination 
+Certified Professional for 
+Requirements Engineering 
+Foundation Level 
+Practice Exam 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Questionnaire: Set_Public_EN_3.3.1 
+Syllabus: CPRE Foundation Level 3 
+ 
+ Passed 
+ Failed 
+Total number of points 
+  
+ 
+ 
+
+--- PAGE 2 ---
+ 
+Foundation Level | Examination 
+© IREB 
+2 | 26 
+Explanation of the practice exam 
+This practice exam provides an example of an actual IREB Requirements Engineering 
+Foundation Level exam. It can be used when preparing for the actual exam. 
+If you want to use this practice exam under realistic conditions, print out the exam and 
+answer the questions without means such as training materials or books within a limit of 75 
+minutes. Make sure that you encounter as little disturbance as possible when answering the 
+questions. 
+In order to pass this exam, just like in an actual examination, a mark of 70.00 percent must be 
+achieved. This is 49.00 points out of a maximum 70 possible points for the practice exam at 
+hand. 
+Evaluation of the results 
+In the document "Answers to the practice exam EN", you will find the correct answers. To 
+determine the number of points you have achieved, please use the Excel sheet 
+"CorrectionAidForThePracticeExam EN". 
+Terms of use 
+This practice exam, as well as parts of it, may be distributed in unmodified form and without 
+charge and may be used for training purposes provided IREB e.V. is stated as source and 
+owner of the copyright. 
+ 
+ 
+
+--- PAGE 3 ---
+ 
+Foundation Level | Examination 
+© IREB 
+3 | 26 
+1. 
+Introduction and Overview of Requirements Engineering 
+1.  
+Which of the following statements on quality requirements are true and 
+which are false? 
+K0111 
+2 Points 
+ 
+True 
+False 
+ 
+ 
+ 
+ 
+ 
+A) Quality requirements refer to the process of creating software and not to 
+the product. 
+ 
+ 
+ 
+ 
+B) Quality requirements can complement functional requirements. 
+ 
+ 
+ 
+ 
+C) Quality requirements are elicited after the functional requirements. 
+ 
+ 
+ 
+ 
+D) Quality requirements can be substantiated with additional functional 
+requirements. 
+ 
+ 
+ 
+2.  
+Which of the following tasks is NOT a core task of the Requirements 
+Engineer? (1 answer) 
+A0120 
+1 Point 
+ 
+ 
+A) Eliciting requirements 
+ 
+ 
+B) Formalizing requirements 
+ 
+ 
+C) Documenting requirements 
+ 
+ 
+D) Validating requirements 
+ 
+ 
+
+--- PAGE 4 ---
+ 
+Foundation Level | Examination 
+© IREB 
+4 | 26 
+3.  
+Amongst other things, the customer demands the following from the 
+contractor responsible for delivering an information system: 
+A) The contractor shall process a change request within five days. 
+B) The test reports from the integration test must be disclosed for 
+examination and the test report from the system test must be 
+handed over. 
+C) At any time, the system shall enable a throughput of 100 
+transactions per second. 
+D) The Subversion tool must be used for configuration management. 
+E) Under normal load, the response time must be no more than two 
+seconds in 90 percent of the cases. 
+Which two requirements refer to the system to be realized? (2 answers) 
+P0113 
+1 Point 
+ 
+ 
+A) Requirement A 
+ 
+ 
+B) Requirement B 
+ 
+ 
+C) Requirement C 
+ 
+ 
+D) Requirement D 
+ 
+ 
+E) Requirement E 
+ 
+ 
+
+--- PAGE 5 ---
+ 
+Foundation Level | Examination 
+© IREB 
+5 | 26 
+2. 
+Fundamental Principles of Requirements Engineering 
+4.  
+Which of the following statements does NOT represent a fundamental 
+principle of Requirements Engineering? (1 answer) 
+A3205 
+1 Point 
+ 
+ 
+A) Value orientation 
+ 
+ 
+B) Problem - requirement - solution 
+ 
+ 
+C) Regular retrospectives 
+ 
+ 
+D) Systematic and disciplined work 
+ 
+ 
+5.  
+Shared understanding is a principle of Requirements Engineering. For 
+each of the following statements about shared understanding decide, 
+whether it is true or false. 
+K3206 
+2 Points 
+ 
+True 
+False 
+ 
+ 
+ 
+ 
+ 
+A) Achieving explicit shared understanding is one of the main 
+goals of Requirements Engineering. 
+ 
+ 
+ 
+ 
+B) Without shared understanding, it is impossible to identify the 
+relevant requirement sources. 
+ 
+ 
+ 
+ 
+C) Some degree of implicit shared understanding is crucial 
+because it is impossible to specify everything explicitly. 
+ 
+ 
+ 
+ 
+D) Requirements Engineering in agile development does not work 
+without relying on implicit shared understanding. 
+ 
+ 
+ 
+
+--- PAGE 6 ---
+ 
+Foundation Level | Examination 
+© IREB 
+6 | 26 
+6.  
+When defining the system boundary and the context boundary, which 
+aspects need to be considered and which do not need to be 
+considered? 
+K0202 
+2 Points 
+ 
+Needs to be 
+considered 
+Does not need 
+to be considered 
+ 
+ 
+ 
+ 
+ 
+A) The system 
+ 
+ 
+ 
+ 
+B) The system context 
+ 
+ 
+ 
+ 
+C) The application domain 
+ 
+ 
+ 
+ 
+D) The interfaces between system and system context 
+ 
+ 
+ 
+7.  
+During the Requirements Engineering process for an online database 
+application, you find out that data protection regulations do not apply, as 
+the data processed by the system is anonymized. 
+What will be influenced by this finding? (1 answer) 
+A0207 
+1 Point 
+ 
+ 
+A) System boundary 
+ 
+ 
+B) Context boundary 
+ 
+ 
+C) System interfaces 
+ 
+ 
+D) Application boundary 
+ 
+ 
+
+--- PAGE 7 ---
+ 
+Foundation Level | Examination 
+© IREB 
+7 | 26 
+3. 
+Work Products and Documentation Practices 
+8.  
+Which of the following statements regarding work products is NOT 
+correct? (1 answer) 
+A3310 
+1 Point 
+ 
+ 
+A) Any recorded information that is created during Requirements Engineering is a 
+work product. 
+ 
+ 
+B) Recorded artifacts that describe gathered information as an intermediate or 
+final result are work products. 
+ 
+ 
+C) User stories, activity diagrams, use cases and prototypes are work products. 
+ 
+ 
+D) Only final requirements documents that describe a fixed set of requirements 
+are work products. 
+ 
+ 
+9.  
+Which of the following concepts CANNOT be found in UML class 
+diagrams? (1 answer) 
+A3311 
+1 Point 
+ 
+ 
+A) Associations 
+ 
+ 
+B) States 
+ 
+ 
+C) Multiplicities 
+ 
+ 
+D) Attributes 
+ 
+ 
+
+--- PAGE 8 ---
+ 
+Foundation Level | Examination 
+© IREB 
+8 | 26 
+10.  
+You want to design a requirements document in such a way that it is 
+particularly well suited for the people who will work with the document in 
+further phases of the development process. 
+From the following sentences, choose the two best combinations of the 
+role and its criteria for the requirements. (2 answers) 
+P0416 
+2 Points 
+ 
+ 
+A) For the testers, it must be possible to realize the requirements. 
+ 
+ 
+B) For the developers, it must be possible to change the requirements easily. 
+ 
+ 
+C) For all people involved, the requirements in a work product have to be 
+consistent. 
+ 
+ 
+D) For the project manager, the requirements have to be necessary. 
+ 
+ 
+E) For the maintenance staff, it must be possible to prioritize the requirements. 
+ 
+ 
+11.  
+A company wants to support its process of tender preparation with an 
+information system. You are the Requirements Engineer responsible in 
+this project. During initial discussions with different representatives, you 
+discover, among other aspects, the following: 
+• 
+You do not understand some of the company's terminology. 
+• 
+It is obvious that the company representatives do not use 
+consistent terminology. 
+• 
+Your main contact person at the company described their ideas by 
+telling you the expected interactions between specialists and the 
+information system in the form of different flows of user actions 
+and system reactions. 
+Which two of the following approaches are particularly well suited to 
+eliciting and documenting the requirements in this case? (2 answers) 
+P0417 
+2 Points 
+ 
+ 
+A) Creating a statechart 
+ 
+ 
+B) Establishing a glossary 
+ 
+ 
+C) Eliciting and documenting the quality requirements 
+ 
+ 
+D) Creating a use case diagram and specifying the use cases 
+ 
+ 
+E) Creating and testing prototypes 
+ 
+ 
+
+--- PAGE 9 ---
+ 
+Foundation Level | Examination 
+© IREB 
+9 | 26 
+12.  
+Which of the following statements on the choice of notations for the 
+documentation of functional requirements apply and which do not apply? 
+K0418 
+2 Points 
+ 
+Applies 
+Does not 
+apply 
+ 
+ 
+ 
+ 
+A) Stakeholders should be able to read the notation used for a work 
+product. 
+ 
+ 
+ 
+ 
+B) Diagrams have to be applied in projects with object-oriented 
+development. 
+ 
+ 
+ 
+ 
+C) To ensure optimal communication, a notation that is aligned to the 
+type of requirement should be used. 
+ 
+ 
+ 
+ 
+D) Graphical notations are well suited for describing system 
+requirements. 
+ 
+ 
+ 
+13.  
+IREB defines quality criteria for work products. Which of the following 
+statements about quality criteria are true and which are false? 
+K3423 
+2 Points 
+ 
+True 
+False 
+ 
+ 
+ 
+ 
+ 
+A) A requirement specification is non-redundant if each requirement is 
+documented only once and does not overlap with others. 
+ 
+ 
+ 
+ 
+B) A use case diagram might be not consistent with an activity diagram even 
+if both of them are non-redundant. 
+ 
+ 
+ 
+ 
+C) A requirements specification is consistent if no single requirement 
+contradicts with other requirements. 
+ 
+ 
+ 
+ 
+D) A use case specification is conformant if it contains all relevant 
+requirements for the final product. 
+ 
+ 
+ 
+
+--- PAGE 10 ---
+ 
+Foundation Level | Examination 
+© IREB 
+10 | 26 
+14.  
+A phrase template can be used to document natural-language 
+requirements. You want to introduce such a template in your project and 
+have to convince your project manager of the benefits. 
+Which are the two best arguments? (2 answers) 
+P0510 
+2 Points 
+ 
+ 
+A) Phrase templates help to document well-structured requirements by providing 
+a predefined syntactic structure. 
+ 
+ 
+B) Requirements formulated in accordance with a phrase template do not 
+contain incomplete relationships. 
+ 
+ 
+C) Learning how to write requirements in accordance with a phrase template 
+does not require much time. 
+ 
+ 
+D) Using a phrase template basically delivers a greater degree of information 
+content. 
+ 
+ 
+E) Requirements written in accordance with a phrase template ensure that the 
+quality criteria for requirements are met. 
+ 
+ 
+15.  
+You are given the following requirement: "The system Alpha should display 
+all data sets in all submenus". What is the most severe issue in this 
+requirement? (1 answer) 
+A0508 
+1 Point 
+ 
+ 
+A) The requirement is written in the passive voice. 
+ 
+ 
+B) Universal quantifiers have been used. 
+ 
+ 
+C) The requirement has incomplete conditions. 
+ 
+ 
+D) Nominalizations have been used. 
+ 
+ 
+
+--- PAGE 11 ---
+ 
+Foundation Level | Examination 
+© IREB 
+11 | 26 
+16.  
+Which of the following statements are true and which are false when 
+working with template-based work products? 
+K3520 
+2 Points 
+ 
+True 
+False 
+ 
+ 
+ 
+ 
+ 
+A) Templates provide a blueprint for structuring single requirements, as well 
+as whole specifications. 
+ 
+ 
+ 
+ 
+B) Template-based work products for single requirements can help to 
+prevent incomplete formulation of requirements in natural language. 
+ 
+ 
+ 
+ 
+C) Template-based work products are inherently better in content than 
+freely formulated requirements. 
+ 
+ 
+ 
+ 
+D) Templates are obligatory for all authors of a requirements specification. 
+ 
+ 
+ 
+17.  
+A system needs to be developed for managing the fleet of a courier 
+service. The system shall periodically transmit the geographical position of 
+a vehicle to the central unit. The following requirements were documented: 
+R1: "The system should be in operation as long as the ignition key is in the 
+ignition lock." 
+R2: "The system should be in operation as long as a driver is seated in the 
+driver's seat." 
+R3: "The system should switch to lost-signal if less than three satellites are 
+available." 
+Which diagram best supports this type of requirement? (1 answer) 
+A3521 
+1 Point 
+ 
+A) State diagram 
+ 
+ 
+B) Class diagram 
+ 
+ 
+C) Context diagram 
+ 
+ 
+D) Use case diagram 
+ 
+ 
+ 
+
+--- PAGE 12 ---
+ 
+Foundation Level | Examination 
+© IREB 
+12 | 26 
+18.  
+To support young actors and directors, a contest for short films is 
+held. The three best films will be presented with an award. The films 
+submitted must have a maximum length of 20 minutes and must take 
+the constraints depicted in the following diagram into consideration. 
+K0619 
+2 Points 
+ 
+ 
+Do the following statements match the above diagram? 
+ 
+Matches 
+Does not 
+match 
+ 
+ 
+ 
+ 
+ 
+A) Three directors may direct a film collaboratively. 
+ 
+ 
+ 
+ 
+B) A film with only one actor may be submitted. 
+ 
+ 
+ 
+ 
+C) A director may direct two films submitted. 
+ 
+ 
+ 
+ 
+D) An actor may star in any number of films. 
+ 
+ 
+ 
+ 
+E) A film must have ten actors starring in it. 
+ 
+ 
+ 
+19.  
+What is NOT depicted in a use case diagram? (1 answer) 
+A0620 
+1 Point 
+ 
+ 
+A) The process steps of an application 
+ 
+ 
+B) The actors of an application 
+ 
+ 
+C) The boundary between an application and its environment 
+ 
+ 
+D) An application's functionality 
+ 
+ 
+
+--- PAGE 13 ---
+ 
+Foundation Level | Examination 
+© IREB 
+13 | 26 
+20. 
+A company wants to introduce an authorization process for accessing 
+confidential parts of the company's intranet by issuing time-limited 
+passwords. For that reason a state diagram is modeled to express the 
+possible states and state transitions for a user. 
+K3605 
+2 Points 
+ 
+ 
+ 
+Determine which of the following requirements are modeled correctly in 
+the state diagram above and which are modeled incorrectly or are not 
+modeled at all. 
+ 
+Correctly 
+modeled 
+Incorrect or 
+not modeled 
+ 
+ 
+ 
+ 
+ 
+A) Users in state blocked can be unblocked by resetting the user's 
+password. 
+ 
+ 
+ 
+ 
+B) If abuse for an user in state entitled has been noticed, the user’s 
+password is blocked. 
+ 
+ 
+ 
+ 
+C) If the validity period for an user in state entitled has expired, the 
+password is deleted and the user is set to state not entitled. 
+ 
+ 
+ 
+ 
+D) If an application request is approved, the user gets an approval 
+mail. 
+ 
+ 
+ 
+
+--- PAGE 14 ---
+ 
+Foundation Level | Examination 
+© IREB 
+14 | 26 
+21.  
+The following activity diagram represents performing a measurement. 
+K0643 
+2 Points 
+ 
+ 
+ 
+ 
+
+--- PAGE 15 ---
+ 
+Foundation Level | Examination 
+© IREB 
+15 | 26 
+ 
+Do the following statements match the above diagram? 
+ 
+Matches 
+Does not 
+match 
+ 
+ 
+ 
+ 
+ 
+A) Initialize measuring device must happen prior to Register at server. 
+ 
+ 
+ 
+ 
+B) Register at server happens as soon as Load certificates is ready. 
+ 
+ 
+ 
+ 
+C) Initialize network connection and Load certificates must finish at 
+the same time. 
+ 
+ 
+ 
+ 
+D) Deactivate measuring device is executed as soon as Data receipt 
+confirmed is true. 
+ 
+ 
+ 
+22. 
+In Requirements Engineering, which two substantial advantages do graphical 
+models (e.g., use case models or state machines) have over plain textual 
+specifications in natural language? (2 answers) 
+P0623 
+2 Points 
+ 
+ 
+A) Models often focus on specific aspects and reduce the cognitive load for 
+understanding the requirements. 
+ 
+ 
+B) Models allow the complete description of requirements for a planned system. 
+ 
+ 
+C) Models can be checked more easily than natural language and have a restricted 
+syntax that reduces possible ambiguities and omissions. 
+ 
+ 
+D) Models are created with tools using a repository. Therefore, models are better 
+suited for managing requirements. 
+ 
+ 
+E) With proper tools, source code can be generated from models, thus saving the 
+effort for testing. 
+ 
+ 
+
+--- PAGE 16 ---
+ 
+Foundation Level | Examination 
+© IREB 
+16 | 26 
+23. 
+For each of the statements on the diagram below, decide whether it is true 
+or false. 
+K0624 
+2 Points 
+ 
+ 
+ 
+
+--- PAGE 17 ---
+ 
+Foundation Level | Examination 
+© IREB 
+17 | 26 
+True 
+False 
+ 
+ 
+ 
+ 
+ 
+A) A route can be calculated without querying traffic information. 
+ 
+ 
+ 
+ 
+B) A route can be calculated after querying traffic information. 
+ 
+ 
+ 
+ 
+C) The system can ask for the desire to calculate the route dynamically without 
+having to determine the GPS coordinates first. 
+ 
+ 
+ 
+ 
+D) The order of Enter destination and Determine GPS coordinates is arbitrary. 
+ 
+ 
+ 
+24. 
+You are modeling the requirements for a management system to be applied 
+in universities. The steps for enrollment of a new student at a university are to 
+be documented using a model-based approach. Which two of the following 
+diagrams are best suited to this aim? (2 answers) 
+P0626 
+2 Points 
+ 
+ 
+A) BPMN diagram 
+ 
+ 
+B) Laus-Ohl diagram 
+ 
+ 
+C) Activity diagram 
+ 
+ 
+D) Class diagram 
+ 
+ 
+E) Use case diagram 
+ 
+ 
+25. 
+When specifying a system, different aspects have to be considered. What is 
+described in the function and flow aspect? (1 answer) 
+A0627 
+1 Point 
+ 
+ 
+A) Portability of the system 
+ 
+ 
+B) Reaction of the system to an internal state transition 
+ 
+ 
+C) Structure of input and output data 
+ 
+ 
+D) Transformation of input data into output data 
+ 
+ 
+
+--- PAGE 18 ---
+ 
+Foundation Level | Examination 
+© IREB 
+18 | 26 
+4. 
+Practices for Requirements Elaboration 
+26. 
+You have been appointed as a Requirements Engineer in a company and 
+are in the process of eliciting detailed requirements for a use case. To do 
+this, you run through a series of interviews with various stakeholders. In the 
+interview follow-up, you notice an inconsistency in the statements about 
+the arrangement of functions in the menu on the user interface. What is 
+the best way to deal with this situation? (1 answer) 
+A3409 
+1 Point 
+ 
+ 
+ 
+A) You discuss this finding with an available stakeholder and get a clear 
+statement and record their advice. 
+ 
+ 
+B) You invite all stakeholders involved to a meeting and reach an agreement on 
+this point. 
+ 
+ 
+C) Due to your experience with user interfaces you can solve the problem on your 
+own, thus saving valuable time. 
+ 
+ 
+D) You forward the problem to the product owner and let them decide on this 
+matter based on the evaluation of potential risks. 
+ 
+ 
+27.  
+Which two of the following statements best characterize the relationship 
+between a Requirements Engineer and a stakeholder in the role of a tester? 
+(2 answers) 
+P0309 
+1 Point 
+ 
+ 
+A) The Requirements Engineer provides input for the stakeholder's work. 
+ 
+ 
+B) The Requirements Engineer's results are managed by the stakeholder. 
+ 
+ 
+C) The stakeholder can contribute to ensure the quality of the Requirements 
+Engineer's work. 
+ 
+ 
+D) The stakeholder supervises the Requirements Engineer's work. 
+ 
+ 
+E) There is no relationship between the Requirements Engineer's work and the 
+stakeholder role. 
+ 
+ 
+
+--- PAGE 19 ---
+ 
+Foundation Level | Examination 
+© IREB 
+19 | 26 
+28. 
+The Kano model states that dissatisfiers (basic factors) are hard to elicit. 
+Which of the techniques mentioned below is the most effective elicitation 
+technique for dissatisfiers? (1 answer) 
+A0312 
+1 Point 
+ 
+ 
+A) Prototyping 
+ 
+ 
+B) Questionnaire 
+ 
+ 
+C) Field observation 
+ 
+ 
+D) Brainstorming 
+ 
+ 
+29. 
+Which two of the following aspects are the most important to consider 
+when choosing suitable elicitation techniques? (2 answers) 
+P0313 
+2 Points 
+ 
+ 
+A) The availability of the involved people. 
+ 
+ 
+B) The preferences of the requirements engineer. 
+ 
+ 
+C) The category of requirements based on Kano classification. 
+ 
+ 
+D) The complexity of the required tools. 
+ 
+ 
+E) The habitual use of a technique. 
+ 
+ 
+30. 
+Which of the following techniques is NOT suitable for resolving 
+requirements conflicts? (1 answer) 
+A3410 
+1 Point 
+ 
+ 
+A) Overruling 
+ 
+ 
+B) Definition of variants 
+ 
+ 
+C) Compromise 
+ 
+ 
+D) Sampling 
+ 
+ 
+
+--- PAGE 20 ---
+ 
+Foundation Level | Examination 
+© IREB 
+20 | 26 
+31.  
+Which are the two most important attributes in a stakeholder list? 
+(2 answers) 
+P3411 
+2 Points 
+ 
+ 
+A) Their function/role 
+ 
+ 
+B) Their personal preferences 
+ 
+ 
+C) Their boss 
+ 
+ 
+D) Their relevance 
+ 
+ 
+E) Their previous projects 
+ 
+ 
+32. 
+What are the two key advantages of using questionnaires for requirements 
+elicitation? (2 answers) 
+P0314 
+1 Point 
+ 
+ 
+A) Questionnaires allow a high number of participants. 
+ 
+ 
+B) Questionnaires allow statistically relevant statements on requirements. 
+ 
+ 
+C) Questionnaires allow the participants' understanding to be validated. 
+ 
+ 
+D) Questionnaires allow to obtain the most insights on delighters (excitement 
+factors). 
+ 
+ 
+E) Questionnaires allow to address the needs of individual stakeholders easily. 
+ 
+ 
+33. 
+Which of the following statements about elicitation techniques are true 
+and which are false? 
+K0324 
+2 Points 
+ 
+True 
+False 
+ 
+ 
+ 
+ 
+ 
+A) An interview is a gathering technique. 
+ 
+ 
+ 
+ 
+B) An analogy technique is a gathering technique. 
+ 
+ 
+ 
+ 
+C) System archeology is an observation technique. 
+ 
+ 
+ 
+ 
+D) Apprenticing is an observation technique. 
+ 
+ 
+ 
+
+--- PAGE 21 ---
+ 
+Foundation Level | Examination 
+© IREB 
+21 | 26 
+34. 
+For a navigation system that is to be used internationally, a stakeholder 
+demands a female voice only for the voice output. Another stakeholder 
+considers this discriminatory and demands a male voice in addition. 
+Which of the following types of conflicts describes this conflict best? 
+(1 answer) 
+A0720 
+1 Point 
+ 
+ 
+A) Relationship conflict 
+ 
+ 
+A) Interest conflict 
+ 
+ 
+B) Structural conflict 
+ 
+ 
+C) Value conflict 
+ 
+ 
+35. 
+In your project, a new braking system for high speed trains is developed. 
+Which validation technique is most suitable for this situation, where the 
+system requirements of a safety-critical component should be validated? 
+(1 answer) 
+A0721 
+2 Points 
+ 
+ 
+A) A/B testing 
+ 
+ 
+B) Prototype 
+ 
+ 
+C) Walkthrough 
+ 
+ 
+D) Inspection 
+ 
+ 
+
+--- PAGE 22 ---
+ 
+Foundation Level | Examination 
+© IREB 
+22 | 26 
+5. 
+Process and Working Structure 
+36. 
+Which two major facets below are the most important to consider when 
+configuring an RE process? (2 answers) 
+P3504 
+2 Points 
+ 
+ 
+A) The time facet: linear vs. iterative 
+ 
+ 
+B) The budget facet: tight vs. large 
+ 
+ 
+C) The purpose facet: prescriptive vs. explorative 
+ 
+ 
+D) The methodology facet: structure-based vs. process-based 
+ 
+ 
+E) The interaction facet: team-driven vs. individual-driven 
+ 
+ 
+37. 
+Based on an analysis of the influencing factors, a suitable combination of 
+process facets should be configured. In practice, some specific 
+combinations of facets frequently occur. 
+Which one of the combinations mentioned below is NOT recognized as 
+such? (1 answer) 
+A3505 
+1 Point 
+ 
+ 
+A) Product-oriented RE process (iterative, explorative, market oriented) 
+ 
+ 
+B) Human-oriented RE process (linear, process-based, individual) 
+ 
+ 
+C) Participatory RE process (iterative, explorative, customer specific) 
+ 
+ 
+D) Contractual RE process (linear, prescriptive, customer specific) 
+ 
+ 
+
+--- PAGE 23 ---
+ 
+Foundation Level | Examination 
+© IREB 
+23 | 26 
+6. 
+Management Practices for Requirements 
+38. Which of the following statements about views on requirements are true and 
+which are false? 
+K0819 
+2 Points 
+ 
+True 
+False 
+ 
+ 
+ 
+ 
+A) Not every stakeholder needs to have access to all requirements. 
+ 
+ 
+ 
+ 
+B) Requirements that belong together can be grouped to support the 
+review. 
+ 
+ 
+ 
+ 
+C) Requirements can be hidden from unauthorized stakeholders. 
+ 
+ 
+ 
+ 
+D) It is assured that several people can work on one specification at the 
+same time. 
+ 
+ 
+ 
+39. The traceability of requirements has several goals. 
+Indicate the statement that is NOT correct. (1 answer) 
+A0820 
+1 Point 
+ 
+ 
+A) Traceability facilitates an impact analysis. 
+ 
+ 
+B) Traceability facilitates the verification of implementation. 
+ 
+ 
+C) Traceability facilitates exports from a requirements management tool. 
+ 
+ 
+D) Traceability facilitates finding a requirement's source. 
+ 
+ 
+
+--- PAGE 24 ---
+ 
+Foundation Level | Examination 
+© IREB 
+24 | 26 
+40. Additional information on requirements is managed using attributes. An 
+example of such additional information is a unique identifier. 
+Which of the following statements regarding the purpose of unique identifiers 
+are true and which are false? 
+Unique identifiers are helpful ... 
+K0821 
+2 Points 
+ 
+True 
+False 
+ 
+ 
+ 
+ 
+A) ... for estimating the overall size of a specification. 
+ 
+ 
+ 
+ 
+B) ... for having an unambiguous basis for communication. 
+ 
+ 
+ 
+ 
+C) ... for establishing references to other requirements. 
+ 
+ 
+ 
+ 
+D) ... for establishing traceability to other development artifacts. 
+ 
+ 
+ 
+41.  
+You have produced a requirements baseline and delivered it to development. 
+In the meantime, stakeholders have submitted change requests for 
+requirements of this baseline. 
+Which of the following answers represent correct change management for 
+requirements? (2 answers) 
+P0838 
+2 Points 
+ 
+ 
+A) Changes with regard to requirements that are part of the baseline are 
+implemented through the creation of new versions of the requirements within this 
+requirements baseline. 
+ 
+ 
+B) Prior to adjusting the requirements to the change requests, the impact of the 
+changes has to be determined. 
+ 
+ 
+C) Change requests can be submitted at any time and may be considered for 
+development when creating a future baseline. 
+ 
+ 
+D) Time-critical change requests are neither analyzed nor estimated but delivered 
+directly to development. 
+ 
+ 
+E) If the development for changed requirements has not started yet, the change can 
+easily be processed without creating a new baseline. 
+ 
+ 
+
+--- PAGE 25 ---
+ 
+Foundation Level | Examination 
+© IREB 
+25 | 26 
+42. 
+Attributes are used to manage additional characteristics of requirements. 
+Priority is one example of such a requirements attribute. 
+Which of the following statements on the reason for prioritizing 
+requirements are true and which are false? 
+A reason for prioritizing is ... 
+K0802 
+2 Points 
+ 
+True 
+False 
+ 
+ 
+ 
+ 
+ 
+A) ... to decide which requirements are to be implemented in the next 
+release. 
+ 
+ 
+ 
+ 
+B) ... to decide on which requirements to focus first in testing. 
+ 
+ 
+ 
+ 
+C) ... to document how much it would cost to implement a requirement. 
+ 
+ 
+ 
+ 
+D) ... to recognize which requirements can be reused. 
+ 
+ 
+ 
+43. 
+Version and configuration management are used for managing 
+requirements and requirements specifications. "Version" and "baseline" are 
+two frequently used terms in this context. 
+Select the best description of a baseline. (1 answer) 
+A0804 
+1 Point 
+ 
+ 
+A) A version of a requirement 
+ 
+ 
+B) A released configuration of an individual requirement 
+ 
+ 
+C) A released configuration of requirements 
+ 
+ 
+D) A not yet released version of a requirements specification 
+ 
+ 
+
+--- PAGE 26 ---
+ 
+Foundation Level | Examination 
+© IREB 
+26 | 26 
+7. 
+Tool Support 
+44. As a Requirements Engineer for a company, you have to choose a tool to 
+support your Requirements Engineering process. 
+In this context, which of the following statements are true and which are 
+false? 
+K0910 
+2 Points 
+ 
+True 
+False 
+ 
+ 
+ 
+ 
+A) The tool has to support the artifacts demanded in the Requirements 
+Engineering process applied. 
+ 
+ 
+ 
+ 
+B) The choice of a tool should be left to the users of the tool. 
+ 
+ 
+ 
+ 
+C) The tool has to assist users to set up their test cases as part of the 
+Requirements Engineering process to support shift-left testing. 
+ 
+ 
+ 
+ 
+D) The choice of a tool is influenced by the tool chain (e.g., configuration 
+management tool) the tool is to be applied in. 
+ 
+ 
+ 
+45. 
+Which of the following tasks is NOT a capability of a tool, that supports the 
+management of requirements in the Requirements Engineering process? 
+(1 answer) 
+A0922 
+1 Point 
+ 
+ 
+A) Tracking logical relationships between requirements 
+ 
+ 
+B) Modelling of requirements 
+ 
+ 
+C) Measuring and reporting of the Requirements Engineering process 
+ 
+ 
+D) Providing support for the prioritization of requirements 
+ 
+ 

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validation Report: IREB CPRE-FL Study Guide vs. Official Resources</title>
+<style>
+  :root { --bg: #f8f9fa; --card: #fff; --border: #dee2e6; --text: #212529; --muted: #6c757d; --accent: #0d6efd; --critical: #dc3545; --warning: #fd7e14; --success: #198754; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+  h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.35rem; margin: 2rem 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border); }
+  h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+  .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+  .meta span { display: inline-block; margin-right: 1.5rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.75rem; border: 1px solid var(--border); text-align: left; }
+  th { background: #e9ecef; font-weight: 600; }
+  tr:nth-child(even) { background: #f8f9fa; }
+  .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 3px; font-size: 0.8rem; font-weight: 600; color: #fff; }
+  .badge-critical { background: var(--critical); }
+  .badge-medium { background: var(--warning); }
+  .badge-low { background: var(--muted); }
+  .badge-ok { background: var(--success); }
+  .missing { background: #fff3cd; font-weight: 600; }
+  pre { background: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.85rem; line-height: 1.5; margin: 1rem 0; }
+  code { font-family: 'Cascadia Code', 'Fira Code', monospace; }
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  .summary-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
+  .summary-card h4 { font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .summary-card .count { font-size: 2rem; font-weight: 700; }
+  .summary-card.critical .count { color: var(--critical); }
+  .summary-card.warning .count { color: var(--warning); }
+  .summary-card.info .count { color: var(--muted); }
+  a { color: var(--accent); }
+  p, ul, ol { margin: 0.5rem 0; }
+  li { margin-left: 1.5rem; }
+</style>
+</head>
+<body>
+
+<h1>Validation Report: IREB CPRE-FL Study Guide vs. Official Resources</h1>
+<div class="meta">
+  <span><strong>Date:</strong> 2026-05-27</span>
+  <span><strong>Syllabus:</strong> v3.3.0 (April 2026)</span>
+  <span><strong>Practice Exam:</strong> Set_Public_EN_v3.3.1</span>
+</div>
+
+<div class="summary-grid">
+  <div class="summary-card critical">
+    <h4>Critical Issues</h4>
+    <div class="count">3</div>
+    <p>Missing EUs, no version declared</p>
+  </div>
+  <div class="summary-card warning">
+    <h4>Medium Issues</h4>
+    <div class="count">4</div>
+    <p>Exam detail inaccuracies</p>
+  </div>
+  <div class="summary-card info">
+    <h4>Low Issues</h4>
+    <div class="count">3</div>
+    <p>Missing links &amp; references</p>
+  </div>
+</div>
+
+<h2>1. Syllabus Version &mdash; NOT DECLARED <span class="badge badge-critical">Critical</span></h2>
+<p>The repo does not state which syllabus version it covers. The current official syllabus is <strong>v3.3.0</strong> (April 2026). Based on the 9-chapter structure, the repo follows the older v2-era training layout rather than the v3 syllabus's 7 Educational Units.</p>
+
+<h2>2. Structural Mismatch <span class="badge badge-critical">Critical</span></h2>
+
+<h3>Official v3 Syllabus (7 EUs) vs. Repo (9 Chapters)</h3>
+<table>
+  <thead>
+    <tr><th>EU</th><th>Title</th><th>Level</th><th>Duration</th><th>Repo Mapping</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Introduction and Overview of RE</td><td>L2</td><td>1h</td><td>Ch 1 + Ch 2 (partial)</td></tr>
+    <tr class="missing"><td>2</td><td>Fundamental Principles of RE</td><td>L2</td><td>1h 30m</td><td>NOT COVERED</td></tr>
+    <tr><td>3</td><td>Work Products and Documentation Practices</td><td>L3</td><td>6h</td><td>Ch 4 + Ch 5 + Ch 6</td></tr>
+    <tr><td>4</td><td>Practices for Requirements Elaboration</td><td>L3</td><td>4h 30m</td><td>Ch 2 (partial) + Ch 3 + Ch 7</td></tr>
+    <tr class="missing"><td>5</td><td>Process and Working Structure</td><td>L3</td><td>2h</td><td>NOT COVERED</td></tr>
+    <tr><td>6</td><td>Management Practices for Requirements</td><td>L2</td><td>2h 30m</td><td>Ch 8</td></tr>
+    <tr><td>7</td><td>Tool Support</td><td>L2</td><td>1h</td><td>Ch 9</td></tr>
+  </tbody>
+</table>
+
+<h3>Full Official Table of Contents</h3>
+<pre><code>EU 1  Introduction and Overview of Requirements Engineering (L2) &mdash; 1h
+  1.1  Requirements Engineering: What (L1)
+  1.2  Requirements Engineering: Why (L2)
+  1.3  Requirements Engineering: Where (L2)
+  1.4  Requirements Engineering: How (L1)
+  1.5  The Role and Tasks of a Requirements Engineer (L1)
+  1.6  What to Learn about Requirements Engineering (L1)
+
+EU 2  Fundamental Principles of Requirements Engineering (L2) &mdash; 1h 30m
+  2.1  Overview of Principles (L1)
+  2.2  The Principles Explained (L2)
+       Nine principles: value orientation, stakeholders, shared understanding,
+       context &amp; problem, requirement &amp; solution, validation, evolution,
+       innovation, systematic &amp; disciplined work
+
+EU 3  Work Products and Documentation Practices (L3) &mdash; 6h
+  3.1  Work Products in Requirements Engineering (L2)
+    3.1.1  Characteristics of Work Products (L1)
+    3.1.2  Abstraction Levels (L2)
+    3.1.3  Level of Detail (L2)
+    3.1.4  Aspects to be Considered in Work Products (L1)
+    3.1.5  General Documentation Guidelines (L1)
+    3.1.6  Plan the Work Products to be Used (L1)
+  3.2  Natural-Language-Based Work Products (L2)
+  3.3  Template-Based Work Products (L3)
+  3.4  Model-Based Work Products (L3)
+    3.4.1  The Role of Models in RE (L2)
+    3.4.2  Modeling Context (L2)
+    3.4.3  Modeling Structure and Data (L3)
+    3.4.4  Modeling Function and Flow (L3)
+    3.4.5  Modeling State and Behavior (L2)
+    3.4.6  Further Model Types in RE (L1)
+  3.5  Glossaries (L2)
+  3.6  Requirements Documents and Documentation Structures (L2)
+  3.7  Prototypes in Requirements Engineering (L1)
+  3.8  Quality Criteria for Work Products and Requirements (L1)
+
+EU 4  Practices for Requirements Elaboration (L3) &mdash; 4h 30m
+  4.1  Sources for Requirements (L3)
+  4.2  Elicitation of Requirements (L2)
+  4.3  Resolving Conflicts regarding Requirements (L2)
+  4.4  Validation of Requirements (L2)
+
+EU 5  Process and Working Structure (L3) &mdash; 2h
+  5.1  Influencing Factors (L2)
+  5.2  Requirements Engineering Process Facets (L2)
+  5.3  Configuring a Requirements Engineering Process (L3)
+
+EU 6  Management Practices for Requirements (L2) &mdash; 2h 30m
+  6.1  What is Requirements Management? (L1)
+  6.2  Life Cycle Management (L2)
+  6.3  Version Control (L2)
+  6.4  Configurations and Baselines (L1)
+  6.5  Attributes and Views (L2)
+  6.6  Traceability (L1)
+  6.7  Handling Change (L1)
+  6.8  Prioritization (L1)
+
+EU 7  Tool Support (L2) &mdash; 1h
+  7.1  Tools in Requirements Engineering (L1)
+  7.2  Introducing Tools (L2)</code></pre>
+
+<h3>Missing Content Detail</h3>
+<p><strong>EU 2 &mdash; Fundamental Principles:</strong> The nine principles are completely absent. The official practice exam has <strong>4 questions (6 points, 8.6%)</strong> on this EU.</p>
+<p><strong>EU 5 &mdash; Process and Working Structure:</strong> RE process facets, influencing factors (plan-driven vs agile), and process configuration are not covered. The repo has only a single mention that activities are "not sequential." The official practice exam has <strong>2 questions (3 points, 4.3%)</strong> on this EU.</p>
+
+<h2>3. Exam Format Details <span class="badge badge-medium">Medium</span></h2>
+
+<table>
+  <thead>
+    <tr><th>Detail</th><th>Repo (exam-tips.md)</th><th>Official</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Questions</td><td>~46</td><td>45</td><td><span class="badge badge-medium">Minor</span></td></tr>
+    <tr><td>Duration</td><td>75 min</td><td>75 min (+15 non-native)</td><td><span class="badge badge-medium">Incomplete</span></td></tr>
+    <tr><td>Total points</td><td>~70</td><td>70</td><td><span class="badge badge-ok">Correct</span></td></tr>
+    <tr><td>Passing score</td><td>70% (~49/70)</td><td>70% (49/70)</td><td><span class="badge badge-ok">Correct</span></td></tr>
+    <tr><td>Points per question</td><td>1 or 2</td><td>1 or 2</td><td><span class="badge badge-ok">Correct</span></td></tr>
+    <tr><td>Question types</td><td>A, P, K</td><td>A, P, K</td><td><span class="badge badge-ok">Correct</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Exam Weight by EU (Official Practice Exam)</h3>
+<table>
+  <thead>
+    <tr><th>EU</th><th>Questions</th><th>Points</th><th>Weight</th><th>Repo Weight</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>EU 1 &mdash; Introduction</td><td>3</td><td>4</td><td>5.7%</td><td>Ch 1: ~7%</td></tr>
+    <tr class="missing"><td>EU 2 &mdash; Principles</td><td>4</td><td>6</td><td>8.6%</td><td>Not shown</td></tr>
+    <tr><td>EU 3 &mdash; Work Products</td><td>18</td><td>30</td><td>42.9%</td><td>Ch 4-6: ~40%</td></tr>
+    <tr><td>EU 4 &mdash; Practices</td><td>10</td><td>14</td><td>20.0%</td><td>Ch 2+3+7: ~37%</td></tr>
+    <tr class="missing"><td>EU 5 &mdash; Process</td><td>2</td><td>3</td><td>4.3%</td><td>Not shown</td></tr>
+    <tr><td>EU 6 &mdash; Management</td><td>6</td><td>10</td><td>14.3%</td><td>Ch 8: ~13%</td></tr>
+    <tr><td>EU 7 &mdash; Tools</td><td>2</td><td>3</td><td>4.3%</td><td>Ch 9: ~3%</td></tr>
+  </tbody>
+</table>
+
+<h2>4. Practice Exams <span class="badge badge-medium">Medium</span></h2>
+<ul>
+  <li>Both repo sample exams (46 questions, 70 pts, A/P/K types) closely match the official format</li>
+  <li>Custom-written, not sourced from the official practice exam (Set_Public_EN_v3.3.1)</li>
+  <li>No questions on EU 2 (Principles) or EU 5 (Process)</li>
+  <li>Official practice exam is free in 12 languages &mdash; not mentioned or linked</li>
+</ul>
+
+<h2>5. Glossary <span class="badge badge-low">Low</span></h2>
+<ul>
+  <li>~70 custom glossary terms; official IREB Glossary is v2.2.0 with standardized definitions in 13 languages</li>
+  <li>Definitions are paraphrases, not verbatim from the official glossary</li>
+  <li>No version reference or link to official glossary</li>
+  <li>The official syllabus states: "all terms in the glossary which are designated as foundational terms must be known (L1)"</li>
+</ul>
+
+<h2>6. Content Accuracy <span class="badge badge-ok">Good</span></h2>
+<table>
+  <thead>
+    <tr><th>Topic</th><th>Status</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Requirement definition</td><td><span class="badge badge-ok">Correct</span></td><td>Matches IREB definition</td></tr>
+    <tr><td>Three requirement types</td><td><span class="badge badge-ok">Correct</span></td><td>Functional, quality, constraints</td></tr>
+    <tr><td>Four core RE activities</td><td><span class="badge badge-ok">Correct</span></td><td>Elicitation, documentation, validation &amp; negotiation, management</td></tr>
+    <tr><td>Elicitation techniques (8)</td><td><span class="badge badge-ok">Correct</span></td><td>All 8 IREB techniques covered</td></tr>
+    <tr><td>Kano model</td><td><span class="badge badge-ok">Correct</span></td><td>Properly in prioritization (Ch 8)</td></tr>
+    <tr><td>UML diagrams</td><td><span class="badge badge-ok">Correct</span></td><td>Use case, activity, state machine, class</td></tr>
+    <tr><td>Validation vs. verification</td><td><span class="badge badge-ok">Correct</span></td><td></td></tr>
+    <tr><td>Traceability types</td><td><span class="badge badge-ok">Correct</span></td><td>Pre/post/inter-requirements</td></tr>
+    <tr><td>Natural language defects</td><td><span class="badge badge-ok">Correct</span></td><td>Ambiguity, nominalization, passive voice, etc.</td></tr>
+    <tr><td>Sentence templates</td><td><span class="badge badge-ok">Correct</span></td><td></td></tr>
+  </tbody>
+</table>
+
+<h2>7. No Links to Official Resources <span class="badge badge-low">Low</span></h2>
+<table>
+  <thead>
+    <tr><th>Resource</th><th>Version</th><th>URL</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Syllabus</td><td>v3.3.0</td><td><a href="https://cpre.ireb.org/en/downloads-and-resources/downloads">IREB Download Center</a></td></tr>
+    <tr><td>Handbook</td><td>v1.3.1 (EN)</td><td><a href="https://cpre.ireb.org/en/downloads-and-resources/downloads">IREB Download Center</a></td></tr>
+    <tr><td>Glossary</td><td>v2.2.0 (EN)</td><td><a href="https://cpre.ireb.org/en/downloads-and-resources/downloads">IREB Download Center</a></td></tr>
+    <tr><td>Practice Exam</td><td>v3.3.1</td><td><a href="https://cpre.ireb.org/en/downloads-and-resources/downloads">IREB Download Center</a></td></tr>
+    <tr><td>Exam Regulations</td><td>v5.6.2</td><td><a href="https://cpre.ireb.org/en/downloads-and-resources/downloads">IREB Download Center</a></td></tr>
+    <tr><td>Nine Principles</td><td>v1.0.0</td><td><a href="https://cpre.ireb.org/en/downloads-and-resources/downloads">IREB Download Center</a></td></tr>
+  </tbody>
+</table>
+
+<h2>Summary of Issues by Severity</h2>
+
+<h3><span class="badge badge-critical">Critical</span> Exam coverage gaps</h3>
+<ol>
+  <li><strong>Missing EU 2 &mdash; Nine Fundamental Principles</strong> (new in v3, 8.6% of exam points)</li>
+  <li><strong>Missing EU 5 &mdash; Process and Working Structure</strong> (4.3% of exam points)</li>
+  <li><strong>No declared syllabus version</strong> &mdash; readers don't know if the content is current</li>
+</ol>
+
+<h3><span class="badge badge-medium">Medium</span> Exam detail inaccuracies</h3>
+<ol start="4">
+  <li>Exam question count: repo says ~46, official is 45</li>
+  <li>No mention of +15 min for non-native speakers</li>
+  <li>Practice exams don't cover all 7 EUs</li>
+  <li>Exam weight table doesn't map to the official 7-EU structure</li>
+</ol>
+
+<h3><span class="badge badge-low">Low</span> Completeness / polish</h3>
+<ol start="8">
+  <li>No links to any official IREB resources</li>
+  <li>Glossary not tied to official IREB glossary version or verbatim definitions</li>
+  <li>Chapter numbering follows v2-era layout, not v3 EU numbering</li>
+</ol>
+
+<hr>
+<p style="color: var(--muted); font-size: 0.85rem; margin-top: 2rem;">
+  Generated 2026-05-27. Sources: IREB CPRE FL Syllabus v3.2.0, Practice Exam Set_Public_EN_v3.3.1,
+  <a href="https://cpre.ireb.org/en/downloads-and-resources/downloads">IREB Download Center</a>.
+  See <code>downloads.json</code> for full provenance of all referenced documents.
+</p>
+
+</body>
+</html>

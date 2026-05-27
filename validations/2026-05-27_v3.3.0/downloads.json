@@ -1,0 +1,38 @@
+{
+  "validation_date": "2026-05-27",
+  "target_syllabus_version": "3.3.0",
+  "downloads": [
+    {
+      "filename": "cpre_foundationlevel_syllabus_EN_v3.2.0.pdf",
+      "original_url": "https://isqi.org/media/7f/9a/3e/1744288053/cpre_foundationlevel_syllabus_EN_v.3.2.pdf",
+      "title": "CPRE Foundation Level Syllabus v3.2.0 (English)",
+      "version": "3.2.0",
+      "date": "2024-02-26",
+      "why": "Primary reference for validating chapter structure, learning objectives, and content scope. Used because the English v3.3.0 was not yet published at the time of download; v3.2 to v3.3 changes are layout/typo fixes only (no structural changes).",
+      "size_bytes": 561683,
+      "text_extracted": true
+    },
+    {
+      "filename": "cpre_foundationlevel_syllabus_EN_v3.0.1.pdf",
+      "original_url": "https://www.gasq.org/files/content/gasq/downloads/certification/IREB/IREB%20FL/cpre_foundationlevel_syllabus_en_v.3.0.1.pdf",
+      "title": "CPRE Foundation Level Syllabus v3.0.1 (English)",
+      "version": "3.0.1",
+      "date": "2020-10-07",
+      "why": "Secondary reference to compare against the initial v3 release and verify that the 7-EU structure was present from the start of the v3 lineage.",
+      "size_bytes": 708319,
+      "text_extracted": true
+    },
+    {
+      "filename": "IREB_CPRE_FL_Practice_Exam_EN_v3.3.1.pdf",
+      "original_url": "https://isqi.org/media/a5/83/53/1710759616/IREB_CPRE_FL_Questionnaire_Set_Public_EN_v3.3.1.pdf",
+      "title": "CPRE Foundation Level Practice Exam Set_Public_EN_v3.3.1",
+      "version": "3.3.1",
+      "date": null,
+      "why": "Official practice exam used to verify exam format (45 questions, 70 points, A/P/K types), question distribution across 7 EUs, and validate repo's exam-tips accuracy.",
+      "size_bytes": 415557,
+      "text_extracted": true
+    }
+  ],
+  "extraction_tool": "PyMuPDF (fitz) v1.27.2.3",
+  "notes": "Text-extracted versions (.txt) are saved alongside each PDF for future reference. The v3.3.0 German syllabus was available at cockpit-v1.ireb.org but the English v3.3.0 was not publicly accessible at the time of this validation."
+}
