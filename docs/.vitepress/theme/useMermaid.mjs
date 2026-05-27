@@ -3,6 +3,7 @@ import { useRoute } from 'vitepress'
 import { useData } from 'vitepress'
 
 const darkTheme = {
+  fontFamily: '"Inter", sans-serif',
   background: '#1e1e1e',
   primaryColor: '#2d4a7a',
   primaryTextColor: '#e0e0e0',
@@ -25,6 +26,7 @@ const darkTheme = {
 }
 
 const lightTheme = {
+  fontFamily: '"Inter", sans-serif',
   background: '#ffffff',
   primaryColor: '#d4e6f1',
   primaryTextColor: '#1a1a1a',
