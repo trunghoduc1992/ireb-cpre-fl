@@ -33,8 +33,8 @@ All official documents are free to download from the [IREB Download Center](http
 
 | Page | Description |
 |------|-------------|
-| [Study Plan](/v3/study-plan) | 6-week schedule with time estimates based on official syllabus durations |
-| [Exam Tips](/v3/exam-tips) | Exam format details, question type strategies, and weight by Educational Unit |
-| [Glossary](/v3/glossary) | 215 terms with verbatim definitions from IREB CPRE Glossary v2.2.0 |
-| [Sample Exam 1](/v3/exams/exam-1) | 45 questions, 70 points — matching the official exam format |
-| [Sample Exam 2](/v3/exams/exam-2) | 45 questions, 70 points — different questions, same format |
+| [Study Plan](/study-plan) | 6-week schedule with time estimates based on official syllabus durations |
+| [Exam Tips](/exam-tips) | Exam format details, question type strategies, and weight by Educational Unit |
+| [Glossary](/glossary) | 215 terms with verbatim definitions from IREB CPRE Glossary v2.2.0 |
+| [Sample Exam 1](/exams/exam-1) | 45 questions, 70 points — matching the official exam format |
+| [Sample Exam 2](/exams/exam-2) | 45 questions, 70 points — different questions, same format |

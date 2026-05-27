@@ -3,7 +3,7 @@ layout: home
 hero:
   name: IREB CPRE-FL
   text: Self-Study Guide
-  tagline: Certified Professional for Requirements Engineering — Foundation Level
+  tagline: Aligned with Syllabus v3.3.0 (April 2026) — Certified Professional for Requirements Engineering, Foundation Level
   actions:
     - theme: brand
       text: Start Learning
@@ -16,21 +16,21 @@ hero:
       link: /glossary
 features:
   - icon: "📖"
-    title: 9 Structured Chapters
-    details: Complete coverage of the IREB CPRE-FL syllabus with practical examples from BA and testing perspectives.
+    title: 7 Educational Units
+    details: Structured to match the official IREB CPRE-FL Syllabus v3.3.0 with all Educational Objectives covered.
   - icon: "✅"
-    title: Practice Quizzes
-    details: Test your understanding with multiple-choice questions after every chapter, with detailed explanations.
+    title: Practice Quizzes & Exams
+    details: Quiz questions after every chapter plus full-length sample exams in the official format (45 questions, 70 points).
   - icon: "📊"
     title: Progress Tracking
     details: Track your study progress across chapters. Your progress is saved in your browser.
-  - icon: "🔍"
-    title: Full-Text Search
-    details: Quickly find any concept, term, or technique using the built-in search.
+  - icon: "🔗"
+    title: Official References
+    details: Every chapter links to the corresponding syllabus section and official IREB resources.
 ---
 
-::: warning Legacy Version
-This guide covers an older syllabus structure (9 chapters). For content aligned with the **current IREB CPRE-FL Syllabus v3.3.0** (April 2026), see the [v3.3.0 version](/v3/).
+::: info Syllabus Version
+This guide is aligned with the **IREB CPRE-FL Syllabus v3.3.0** (April 2026). For the older 9-chapter guide, see the [v2 version](/v2/).
 :::
 
 <ProgressTracker />

@@ -1,5 +1,5 @@
 <script setup>
-import Quiz from '../.vitepress/theme/Quiz.vue'
+import Quiz from '../../.vitepress/theme/Quiz.vue'
 
 const questions = [
   {
@@ -432,5 +432,5 @@ Goal models help:
 
 ---
 
-**Previous:** [← Chapter 5: Natural Language](/chapters/05-natural-language)
-| **Next:** [Chapter 7: Validation & Negotiation →](/chapters/07-validation)
+**Previous:** [← Chapter 5: Natural Language](/v2/chapters/05-natural-language)
+| **Next:** [Chapter 7: Validation & Negotiation →](/v2/chapters/07-validation)

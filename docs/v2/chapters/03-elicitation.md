@@ -1,5 +1,5 @@
 <script setup>
-import Quiz from '../.vitepress/theme/Quiz.vue'
+import Quiz from '../../.vitepress/theme/Quiz.vue'
 
 const questions = [
   {
@@ -293,5 +293,5 @@ No single technique is sufficient. IREB expects you to know which technique to u
 
 ---
 
-**Previous:** [← Chapter 2: System & System Context](/chapters/02-system-context)
-| **Next:** [Chapter 4: Documentation Basics →](/chapters/04-documentation)
+**Previous:** [← Chapter 2: System & System Context](/v2/chapters/02-system-context)
+| **Next:** [Chapter 4: Documentation Basics →](/v2/chapters/04-documentation)

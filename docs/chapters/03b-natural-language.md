@@ -1,5 +1,5 @@
 <script setup>
-import Quiz from '../../.vitepress/theme/Quiz.vue'
+import Quiz from '../.vitepress/theme/Quiz.vue'
 
 const questions = [
   {

@@ -3,210 +3,172 @@ import Quiz from '../.vitepress/theme/Quiz.vue'
 
 const questions = [
   {
-    text: 'Which of the following best describes a "requirement" according to IREB?',
+    text: 'Which of the following correctly lists the three kinds of requirements according to IREB?',
     options: [
-      'A feature requested by a developer',
-      'A condition or capability needed by a stakeholder to solve a problem, that must be met by a system',
-      'Any documented user story in a backlog',
-      'A test case that validates system behavior',
-    ],
-    answer: 1,
-    explanation: 'IREB defines a requirement as a condition or capability needed by a stakeholder to solve a problem or achieve an objective, and that must be met or possessed by a system or system component.',
-  },
-  {
-    text: 'What are the three main types of requirements in IREB\'s classification?',
-    options: [
-      'User stories, epics, and tasks',
+      'User stories, epics, and acceptance criteria',
       'Functional requirements, quality requirements, and constraints',
       'Business requirements, system requirements, and user requirements',
-      'Must-have, should-have, and nice-to-have requirements',
+      'Mandatory requirements, optional requirements, and deferred requirements',
     ],
     answer: 1,
-    explanation: 'IREB classifies requirements into functional requirements (what the system does), quality requirements (how well it does it), and constraints (restrictions on the solution space).',
+    explanation: 'IREB distinguishes three kinds of requirements: functional requirements (what a system does), quality requirements (how well it does it), and constraints (limits on the solution space).',
   },
   {
-    text: 'Which of the following is a quality requirement?',
+    text: 'Which of the following is a typical symptom of inadequate Requirements Engineering?',
     options: [
-      'The system shall allow users to reset their password',
-      'The system shall be developed using Java',
-      'The system shall respond to search queries within 2 seconds',
-      'The system shall calculate order totals including tax',
+      'Too many stakeholders are identified',
+      'Requirements are documented too early in the project',
+      'The assumption that the requirements are self-evident',
+      'The development team uses agile methods',
     ],
     answer: 2,
-    explanation: 'Response time is a quality requirement (specifically, a performance requirement). Password reset and order calculation are functional requirements. Using Java is a constraint.',
+    explanation: 'The syllabus lists four typical causes of inadequate RE: rushing into building the system, communication problems, assuming requirements are self-evident, and inadequate RE education and skills.',
   },
   {
-    text: 'Which core activity is NOT part of the requirements engineering process?',
+    text: 'What are the major tasks in Requirements Engineering?',
     options: [
-      'Elicitation',
-      'Documentation',
-      'Implementation',
-      'Validation',
-    ],
-    answer: 2,
-    explanation: 'The four core RE activities are elicitation, documentation, validation & negotiation, and management. Implementation is a software development activity, not an RE activity.',
-  },
-  {
-    text: 'Why is requirements engineering considered important?',
-    options: [
-      'It eliminates the need for testing',
-      'Errors in requirements are the most expensive to fix if found late in the project',
-      'It replaces project management activities',
-      'It is only relevant for waterfall projects',
+      'Planning, designing, coding, and testing',
+      'Elicitation, documentation, validation, and management of requirements',
+      'Analysis, specification, implementation, and deployment',
+      'Interviewing, prototyping, modeling, and reviewing',
     ],
     answer: 1,
-    explanation: 'Studies consistently show that requirement errors found late in development are orders of magnitude more expensive to fix than those caught early. RE helps catch these issues upfront.',
+    explanation: 'The major tasks in RE are elicitation, documentation, validation, and management of requirements. Requirements analysis and conflict resolution are considered part of elicitation.',
+  },
+  {
+    text: 'Which statement best describes the role of a Requirements Engineer?',
+    options: [
+      'A job title held exclusively by senior business analysts',
+      'A role played by people who elicit, document, validate, and/or manage requirements as part of their duties',
+      'A developer who also writes user stories',
+      'A project manager responsible for scheduling requirements workshops',
+    ],
+    answer: 1,
+    explanation: 'Requirements Engineer is typically a role, not a job title. People such as business analysts, product owners, systems engineers, and even developers may act in this role.',
   },
 ]
 </script>
 
-# Chapter 1: Introduction & Foundations
+# EU 1: Introduction and Overview of Requirements Engineering
 
-<div class="exam-tip">
-  <strong>Exam weight:</strong> ~7% of questions. Focus on definitions and the four core RE activities.
-</div>
-
-## What is Requirements Engineering?
-
-**Requirements Engineering (RE)** is a systematic approach to eliciting, documenting, validating, and managing requirements. It forms the bridge between what stakeholders need and what the development team builds.
-
-::: tip From Your Experience
-As a BA, you already do RE — you gather needs, write specs, and manage changes. As a tester, you consume requirements to design test cases. IREB gives you a structured vocabulary for these activities.
+::: info Official Reference
+**IREB CPRE-FL Syllabus v3.3.0** — Educational Unit 1 (L2, 1 hour)
+[Download syllabus](https://cpre.ireb.org/en/downloads-and-resources/downloads)
 :::
 
-### Why RE Matters
+<div class="exam-tip">
+  <strong>Exam weight:</strong> ~5.7% of points (3 questions, 4 points). Focus on definitions and the major RE tasks.
+</div>
 
-The cost of fixing a defect increases dramatically the later it is found. A requirement error caught during elicitation might cost hours to fix; the same error found in production can cost millions.
+## 1.1 Requirements Engineering: What (L1)
 
-RE reduces project risk by:
-- Establishing a shared understanding between stakeholders and the development team
-- Providing a basis for project planning, testing, and acceptance
-- Minimizing rework caused by misunderstood or missing requirements
+People and organizations have desires and needs for new things to be built or existing things to be evolved. We call such needs **requirements**.
 
-## Requirements: The IREB Definition
+The things to be built or evolved may be:
+
+- Products provided to customers
+- Services made available to customers
+- Devices, procedures, or tools that help achieve a specific goal
+- Compositions or components of the above
+
+All these things can be considered as **systems**. **Stakeholders** are persons or organizations who influence the requirements for a system or who are impacted by that system.
 
 <div class="key-concept">
 
-A **requirement** is a condition or capability needed by a stakeholder to solve a problem or achieve an objective, and that must be met or possessed by a system or system component.
+The goal of **Requirements Engineering (RE)** is to specify and manage requirements for systems such that the systems implemented and deployed satisfy their stakeholders' desires and needs.
 
 </div>
 
-Requirements describe **what** the system should do or how well it should perform — not **how** the system should be built internally.
+Requirements are documented in a **requirements specification** — a work product that records the requirements for a system.
 
-## Types of Requirements
+### Three Kinds of Requirements
 
-IREB classifies requirements into three types:
+RE distinguishes three kinds of requirements:
 
-### 1. Functional Requirements
-
-Functional requirements describe **what the system does** — the behavior, functions, and data it must provide.
-
-<div class="example-box">
-
-**Example:** "The system shall allow registered users to search for products by name, category, or price range."
-
-This describes a function the system must perform.
-</div>
-
-### 2. Quality Requirements (Non-Functional Requirements)
-
-Quality requirements describe **how well** the system performs its functions. They specify properties like performance, usability, security, and reliability.
-
-<div class="example-box">
-
-**Example:** "The search results page shall load within 2 seconds for 95% of queries under normal load."
-
-This qualifies *how well* the search function must perform.
-</div>
-
-Common quality categories (remember these for the exam):
-- **Performance** — response time, throughput
-- **Usability** — learnability, accessibility
-- **Reliability** — availability, fault tolerance
-- **Security** — authentication, authorization, data protection
-- **Maintainability** — modifiability, testability
-- **Portability** — adaptability, installability
-
-### 3. Constraints
-
-Constraints are requirements that **restrict the solution space**. They are imposed by the organizational or technological environment and are typically non-negotiable.
-
-<div class="example-box">
-
-**Example:** "The system shall be developed using the company's existing Oracle database infrastructure."
-
-This is not a functional requirement — it restricts *how* the system is built.
-</div>
-
-Constraints can come from:
-- **Organizational**: budget, timeline, process standards
-- **Technological**: platform, programming language, existing systems
-- **Legal/Regulatory**: data protection laws, industry standards
-- **Physical**: hardware limitations, network bandwidth
+| Kind | Description | Example |
+|------|-------------|---------|
+| **Functional requirements** | Concern a result or behavior that shall be provided by a function of the system, including requirements for data or interaction with the environment | "The system shall allow users to search products by name." |
+| **Quality requirements** | Pertain to quality concerns not covered by functional requirements — such as performance, availability, security, or reliability | "The search page shall load within 2 seconds under normal load." |
+| **Constraints** | Limit the solution space beyond what is necessary to meet functional and quality requirements | "The system shall use the company's existing Oracle database." |
 
 ::: warning Common Exam Trap
-Don't confuse quality requirements with constraints. "Response time < 2 seconds" is a quality requirement (negotiable, measurable). "Must use Java" is a constraint (imposed, non-negotiable).
+A quality requirement describes *how well* the system performs. A constraint *restricts* how the system is built. "Response time < 2 seconds" is a quality requirement. "Must use Java" is a constraint.
 :::
 
-## The Four Core RE Activities
+## 1.2 Requirements Engineering: Why (L2)
 
-IREB defines four core activities that form the requirements engineering process:
+Adequate RE adds value in the process of developing and evolving a system:
 
-### 1. Elicitation
-Discovering and gathering requirements from stakeholders and other sources. This includes identifying stakeholders, selecting appropriate techniques, and uncovering both explicit and implicit needs.
+- **Reducing the risk** of developing the wrong system
+- **Better understanding** of the problem
+- **Basis for estimating** development effort and cost
+- **Prerequisite for testing** the system
 
-### 2. Documentation
-Recording requirements in a structured way so they can be communicated, reviewed, and maintained. This includes natural language specifications, models, and templates.
+### Symptoms of Inadequate RE
 
-### 3. Validation and Negotiation
-Checking that documented requirements are correct, complete, and consistent, and resolving conflicts between stakeholders.
+Typical symptoms of inadequate RE are missing, unclear, or incorrect requirements. This is particularly due to:
 
-### 4. Management
-Handling changes to requirements, maintaining traceability, prioritizing requirements, and versioning.
+1. **Rushing straight into building** the system
+2. **Communication problems** between involved parties
+3. **The assumption** that the requirements are self-evident
+4. **Inadequate RE education** and skills
 
-```mermaid
-graph LR
-    E[Elicitation] --> D[Documentation]
-    D --> V[Validation & Negotiation]
-    V --> M[Management]
-    M --> E
-    M --> V
-```
+<div class="example-box">
+
+A team jumps directly into coding a new e-commerce platform without eliciting requirements. After six months, user acceptance testing reveals that the payment module does not support the international currencies the business needs. The cost to rework this is far greater than the cost of proper upfront RE would have been.
+
+</div>
+
+## 1.3 Requirements Engineering: Where (L2)
+
+RE can be applied to requirements for any kind of system. However, the dominant application case today is systems in which software plays a major role — typically consisting of software components, physical elements, and organizational elements.
+
+Requirements can occur as:
+
+- **System requirements** — what a system shall do
+- **Stakeholder requirements** — what stakeholders want from their perspective
+- **User requirements** — what users want from their perspective
+- **Domain requirements** — required domain properties
+- **Business requirements** — business goals, objectives, and needs of an organization
+
+## 1.4 Requirements Engineering: How (L1)
+
+The major tasks in RE are:
+
+1. **Elicitation** — discovering and gathering requirements (covered in EU 4)
+2. **Documentation** — recording requirements in work products (covered in EU 3)
+3. **Validation** — checking that requirements correctly reflect stakeholder needs (covered in EU 4)
+4. **Management** — storing, changing, and tracing requirements (covered in EU 6)
+
+**Tool support** (EU 7) may help perform these tasks. Requirements analysis and conflict resolution are considered part of elicitation.
 
 ::: info Key Point
-These activities are **not sequential**. In practice, they happen iteratively and concurrently. You might elicit new requirements while validating existing ones, or discover documentation gaps during management.
+In order to perform RE activities properly, a suitable RE process must be tailored from a broad range of possibilities (EU 5). There is no one-size-fits-all RE process.
 :::
 
-## The Role of the Requirements Engineer
+## 1.5 The Role and Tasks of a Requirements Engineer (L1)
 
-The requirements engineer acts as a **mediator** between stakeholders and the development team. Key responsibilities include:
+**Requirements Engineer** is typically not a job title, but a role played by people who:
 
-- **Eliciting** stakeholder needs and expectations
-- **Documenting** requirements clearly and unambiguously
-- **Negotiating** and resolving conflicts between stakeholders
-- **Validating** that requirements correctly reflect stakeholder intentions
-- **Managing** requirement changes and traceability
+- Elicit, document, validate, and/or manage requirements as part of their duties
+- Have in-depth knowledge of RE
+- Can bridge the gap between the problem and potential solutions
 
-The requirements engineer does *not* need to be a dedicated role — in many teams, BAs, product owners, or senior developers perform RE activities.
+In practice, business analysts, application specialists, product owners, systems engineers, and even developers act in the role of a Requirements Engineer.
 
-### Required Skills
+## 1.6 What to Learn about Requirements Engineering (L1)
 
-| Skill Area | Examples |
-|-----------|----------|
-| **Analytical thinking** | Decomposing problems, identifying dependencies |
-| **Communication** | Active listening, clear writing, facilitation |
-| **Domain knowledge** | Understanding the business context |
-| **Conflict resolution** | Mediating between competing stakeholder interests |
-| **Self-organization** | Prioritizing work, managing time |
+This syllabus covers the foundational skill set that a Requirements Engineer must learn:
 
-<div class="exam-tip">
-  <strong>Exam tip:</strong> The exam may ask about the responsibilities of a requirements engineer. Remember: they are a <em>mediator</em>, not a decision-maker. They facilitate agreement but don't make final business decisions.
-</div>
+| Educational Unit | What You'll Learn |
+|-----------------|-------------------|
+| EU 2 | The fundamental principles of RE |
+| EU 3 | How to document requirements in various forms |
+| EU 4 | How to elaborate requirements with various practices |
+| EU 5 | How to define and work with suitable RE processes |
+| EU 6 | How to manage existing requirements |
+| EU 7 | How to employ tool support |
 
 ## Practice Quiz
 
 <Quiz :questions="questions" />
-
----
-
-**Next:** [Chapter 2 — System & System Context →](/chapters/02-system-context)

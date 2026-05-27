@@ -1,46 +1,87 @@
-# Study Plan
+# Study Plan (Syllabus v3.3.0)
 
-This guide is structured for someone with BA/testing background aiming to pass the IREB CPRE-FL exam in **4–8 weeks** of part-time study.
+::: info Syllabus Version
+Aligned with **IREB CPRE-FL Syllabus v3.3.0** (April 2026). See also: [Official Resources](/resources)
+:::
+
+This guide is structured for **6 weeks** of part-time study. Time estimates are based on the official syllabus durations (18.5 hours of instructional content) plus review and exam practice.
+
+## Before You Start
+
+1. Download the official **Syllabus** and **Handbook** from the [IREB Download Center](https://cpre.ireb.org/en/downloads-and-resources/downloads) — use them alongside this guide
+2. Bookmark the [Glossary](/glossary) — look up any unfamiliar term as you study
+3. Read the [Exam Tips](/exam-tips) to understand the exam format and question types
 
 ## Recommended Schedule
 
-### Week 1–2: Foundations
-| Day | Topic | Time |
-|-----|-------|------|
-| 1 | [Ch 1: Introduction & Foundations](/chapters/01-introduction) | 1.5 hrs |
-| 2 | [Ch 2: System & System Context](/chapters/02-system-context) | 1 hr |
-| 3 | [Ch 3: Requirements Elicitation](/chapters/03-elicitation) | 2 hrs |
-| 4 | Review Ch 1–3 quizzes | 1 hr |
+### Week 1: Foundations and Principles
 
-### Week 3–4: Documentation
 | Day | Topic | Time |
 |-----|-------|------|
-| 1 | [Ch 4: Documentation Basics](/chapters/04-documentation) | 1.5 hrs |
-| 2 | [Ch 5: Natural Language](/chapters/05-natural-language) | 1.5 hrs |
-| 3 | [Ch 6: Model-Based Documentation](/chapters/06-models) — Part 1 | 2 hrs |
-| 4 | [Ch 6: Model-Based Documentation](/chapters/06-models) — Part 2 | 1.5 hrs |
-| 5 | Review Ch 4–6 quizzes | 1 hr |
+| 1 | [EU 1: Introduction and Overview](/chapters/01-introduction) | 1 hour |
+| 2 | [EU 2: Fundamental Principles](/chapters/02-principles) | 1.5 hours |
+| 3 | Review EU 1-2 quizzes, memorize the nine principles by name | 0.5 hours |
 
-### Week 5–6: Validation & Management
-| Day | Topic | Time |
-|-----|-------|------|
-| 1 | [Ch 7: Validation & Negotiation](/chapters/07-validation) | 2 hrs |
-| 2 | [Ch 8: Requirements Management](/chapters/08-management) | 2 hrs |
-| 3 | [Ch 9: Tool Support](/chapters/09-tools) | 0.5 hrs |
-| 4 | Review Ch 7–9 quizzes | 1 hr |
+EU 2 introduces the nine principles that underpin all subsequent EUs. Many exam questions reference these principles indirectly, so know them well.
 
-### Week 7–8: Exam Prep
+### Week 2-3: Work Products and Documentation
+
 | Day | Topic | Time |
 |-----|-------|------|
-| 1 | Review [Glossary](/glossary) — know every term | 1 hr |
-| 2 | Re-take all chapter quizzes | 2 hrs |
-| 3 | Read [Exam Tips](/exam-tips), focus on weak areas | 1.5 hrs |
-| 4 | Final review pass | 1 hr |
+| 1 | [EU 3: Work Product Basics](/chapters/03a-work-product-basics) — characteristics, life spans, quality criteria | 1.5 hours |
+| 2 | [EU 3: Natural Language & Templates](/chapters/03b-natural-language) — pitfalls, phrase/form/document templates, glossary rules | 2 hours |
+| 3 | [EU 3: Model-Based Work Products — Part 1](/chapters/03c-models) — role of models, context diagrams, class diagrams | 2 hours |
+| 4 | [EU 3: Model-Based Work Products — Part 2](/chapters/03c-models) — activity diagrams, state machines, further model types | 1.5 hours |
+| 5 | Review EU 3 quizzes | 1 hour |
+
+EU 3 carries **42.9%** of the exam weight (18 questions, 30 points). Spend extra time here. Practice reading UML diagrams — the exam often includes diagram-based questions.
+
+### Week 4: Elaboration Practices
+
+| Day | Topic | Time |
+|-----|-------|------|
+| 1 | [EU 4: Sources and Elicitation](/chapters/04a-sources-and-elicitation) — three source types, Kano model, gathering vs. design techniques | 2.5 hours |
+| 2 | [EU 4: Conflicts and Validation](/chapters/04b-conflicts-and-validation) — conflict types, resolution techniques, validation aspects | 2 hours |
+| 3 | Review EU 4 quizzes | 1 hour |
+
+EU 4 is the second-heaviest EU at **20%** of exam points. Know the Kano model categories, the difference between gathering and design techniques, and the six conflict types.
+
+### Week 5: Process, Management, and Tools
+
+| Day | Topic | Time |
+|-----|-------|------|
+| 1 | [EU 5: Process and Working Structure](/chapters/05-process) — influencing factors, three facets, three configurations | 2 hours |
+| 2 | [EU 6: Management Practices](/chapters/06-management) — lifecycle, versioning, baselines, traceability, change handling, prioritization | 2.5 hours |
+| 3 | [EU 7: Tool Support](/chapters/07-tools) — three support categories, tool introduction | 1 hour |
+| 4 | Review EU 5-7 quizzes | 1 hour |
+
+### Week 6: Exam Preparation
+
+| Day | Topic | Time |
+|-----|-------|------|
+| 1 | Review [Glossary](/glossary) — all foundational terms must be known (L1) | 1 hour |
+| 2 | Take [Sample Exam 1](/exams/exam-1) under timed conditions (75 min) | 1.5 hours |
+| 3 | Review mistakes, retake chapter quizzes for weak areas | 2 hours |
+| 4 | Take [Sample Exam 2](/exams/exam-2) or the [official IREB practice exam](https://cpre.ireb.org/en/downloads-and-resources/downloads) | 1.5 hours |
+| 5 | Final review — focus on EU 3 and EU 4 (together 63% of exam points) | 1 hour |
 
 ## Study Tips
 
 - **Don't just read — quiz yourself.** Each chapter ends with practice questions. Score yourself honestly.
-- **Map concepts to your work.** With BA/testing experience, you already do many of these activities. Connecting syllabus terms to your daily work makes them stick.
-- **Focus on the IREB vocabulary.** The exam tests whether you know the *IREB-specific* definitions, which sometimes differ from common usage.
-- **Pay extra attention to Chapter 6.** Model-based documentation (UML diagrams) tends to have the most exam questions and is where many candidates lose points.
-- **Review the glossary regularly.** Many exam questions test precise terminology.
+- **Focus on the IREB vocabulary.** The exam tests the syllabus definitions, which sometimes differ from common usage. Use the [Glossary](/glossary).
+- **Know the nine principles.** They appear explicitly in EU 2 questions and implicitly throughout other EUs.
+- **Pay extra attention to EU 3.** It carries 42.9% of the exam and covers models, templates, quality criteria, and documentation practices.
+- **Understand the distinctions.** The exam tests whether you can tell apart: validation vs. verification, system context vs. system boundary, linear vs. iterative, gathering vs. design techniques, explicit vs. implicit traceability.
+- **Practice with the official exam.** The IREB practice exam is free and matches the real exam format exactly — take it under timed conditions.
+
+## Exam Weight Summary
+
+| EU | Topic | Weight | Study Priority |
+|----|-------|--------|---------------|
+| EU 3 | Work Products & Documentation | 42.9% | Highest |
+| EU 4 | Practices for Elaboration | 20.0% | High |
+| EU 6 | Management Practices | 14.3% | Medium |
+| EU 2 | Fundamental Principles | 8.6% | Medium |
+| EU 1 | Introduction & Overview | 5.7% | Lower |
+| EU 5 | Process & Working Structure | 4.3% | Lower |
+| EU 7 | Tool Support | 4.3% | Lower |

@@ -1,5 +1,5 @@
 <script setup>
-import Quiz from '../.vitepress/theme/Quiz.vue'
+import Quiz from '../../.vitepress/theme/Quiz.vue'
 
 const questions = [
   {
@@ -276,5 +276,5 @@ The exam treats the glossary as a **mandatory artifact** for quality requirement
 
 ---
 
-**Previous:** [← Chapter 4: Documentation Basics](/chapters/04-documentation)
-| **Next:** [Chapter 6: Model-Based Documentation →](/chapters/06-models)
+**Previous:** [← Chapter 4: Documentation Basics](/v2/chapters/04-documentation)
+| **Next:** [Chapter 6: Model-Based Documentation →](/v2/chapters/06-models)

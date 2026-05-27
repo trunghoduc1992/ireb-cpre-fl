@@ -1,5 +1,5 @@
 <script setup>
-import Quiz from '../.vitepress/theme/Quiz.vue'
+import Quiz from '../../.vitepress/theme/Quiz.vue'
 
 const questions = [
   {
@@ -267,5 +267,5 @@ Legal wants: "The registration form must collect full address and date of birth 
 
 ---
 
-**Previous:** [← Chapter 6: Model-Based Documentation](/chapters/06-models)
-| **Next:** [Chapter 8: Requirements Management →](/chapters/08-management)
+**Previous:** [← Chapter 6: Model-Based Documentation](/v2/chapters/06-models)
+| **Next:** [Chapter 8: Requirements Management →](/v2/chapters/08-management)

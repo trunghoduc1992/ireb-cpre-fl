@@ -1,5 +1,5 @@
 <script setup>
-import Quiz from '../.vitepress/theme/Quiz.vue'
+import Quiz from '../../.vitepress/theme/Quiz.vue'
 
 const questions = [
   {
@@ -193,5 +193,5 @@ Introducing an RE tool is a **change management challenge**, not just a technica
 
 ---
 
-**Previous:** [← Chapter 8: Requirements Management](/chapters/08-management)
+**Previous:** [← Chapter 8: Requirements Management](/v2/chapters/08-management)
 | **Return to:** [Home →](/)

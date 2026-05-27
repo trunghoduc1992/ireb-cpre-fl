@@ -1,5 +1,5 @@
 <script setup>
-import Quiz from '../.vitepress/theme/Quiz.vue'
+import Quiz from '../../.vitepress/theme/Quiz.vue'
 
 const questions = [
   {
@@ -295,5 +295,5 @@ A group authorized to approve or reject change requests. Typically includes:
 
 ---
 
-**Previous:** [← Chapter 7: Validation & Negotiation](/chapters/07-validation)
-| **Next:** [Chapter 9: Tool Support →](/chapters/09-tools)
+**Previous:** [← Chapter 7: Validation & Negotiation](/v2/chapters/07-validation)
+| **Next:** [Chapter 9: Tool Support →](/v2/chapters/09-tools)

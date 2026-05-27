@@ -1,5 +1,5 @@
 <script setup>
-import Quiz from '../.vitepress/theme/Quiz.vue'
+import Quiz from '../../.vitepress/theme/Quiz.vue'
 
 const questions = [
   {
@@ -230,5 +230,5 @@ The ID scheme doesn't matter as long as it's consistent, unique, and maintainabl
 
 ---
 
-**Previous:** [← Chapter 3: Requirements Elicitation](/chapters/03-elicitation)
-| **Next:** [Chapter 5: Natural Language →](/chapters/05-natural-language)
+**Previous:** [← Chapter 3: Requirements Elicitation](/v2/chapters/03-elicitation)
+| **Next:** [Chapter 5: Natural Language →](/v2/chapters/05-natural-language)

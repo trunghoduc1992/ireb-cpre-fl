@@ -1,5 +1,5 @@
 <script setup>
-import Quiz from '../.vitepress/theme/Quiz.vue'
+import Quiz from '../../.vitepress/theme/Quiz.vue'
 
 const questions = [
   {
@@ -232,5 +232,5 @@ graph LR
 
 ---
 
-**Previous:** [← Chapter 1: Introduction & Foundations](/chapters/01-introduction)
-| **Next:** [Chapter 3: Requirements Elicitation →](/chapters/03-elicitation)
+**Previous:** [← Chapter 1: Introduction & Foundations](/v2/chapters/01-introduction)
+| **Next:** [Chapter 3: Requirements Elicitation →](/v2/chapters/03-elicitation)
