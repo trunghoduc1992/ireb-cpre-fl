@@ -167,9 +167,6 @@ graph LR
   end
   A <--> System
   B <--> System
-  style System fill:#d4e6f1,stroke:#2980b9,stroke-width:2px
-  style Context fill:#d5f5e3,stroke:#27ae60
-  style Irrelevant fill:#f2f3f4,stroke:#bdc3c7
 ```
 
 When specifying a system, the Requirements Engineer must also consider:

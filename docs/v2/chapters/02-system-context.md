@@ -83,9 +83,6 @@ graph TD
     end
 
     style core fill:none,stroke:none
-    style SYS fill:#4f6df5,color:#fff,stroke:#3a5bef,stroke-width:2px
-    style CTX fill:#b3c4fc,color:#333,stroke:#5a74f3,stroke-width:2px,stroke-dasharray:5 5
-    style ENV fill:#e8ecff,color:#333,stroke:#999,stroke-width:2px
 ```
 
 <div class="key-concept">
@@ -219,11 +216,6 @@ graph LR
     S[Online Shop\nSuD] <-->|payment processing| PG([Payment Gateway])
     W([Warehouse Staff]) <-->|order data, reports| S
 
-    style S fill:#4f6df5,color:#fff,stroke:#3a5bef,stroke-width:2px
-    style C fill:#fff,stroke:#333
-    style SP fill:#fff,stroke:#333
-    style PG fill:#fff,stroke:#333
-    style W fill:#fff,stroke:#333
 ```
 
 ## Practice Quiz

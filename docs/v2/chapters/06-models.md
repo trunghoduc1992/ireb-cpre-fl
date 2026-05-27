@@ -220,11 +220,6 @@ flowchart TD
     Join1 --> Ship[Ship Order]
     Ship --> End2(( ))
 
-    style Start fill:#000,stroke:#000,color:#000
-    style End1 fill:#000,stroke:#000,color:#000
-    style End2 fill:#000,stroke:#000,color:#000
-    style Fork1 fill:#333,stroke:#333,color:#333
-    style Join1 fill:#333,stroke:#333,color:#333
 ```
 
 ### Swim Lanes
