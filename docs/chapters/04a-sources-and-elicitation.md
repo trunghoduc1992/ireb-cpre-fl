@@ -159,6 +159,8 @@ quadrantChart
     Dissatisfiers: [0.70, 0.30]
 ```
 
+*Dissatisfiers sit low-right: even when fully fulfilled they don't delight. Delighters sit upper-left: even partial fulfillment creates strong satisfaction. Satisfiers scale linearly.*
+
 ### Two Categories of Elicitation Techniques
 
 | Category | Purpose | Targets |

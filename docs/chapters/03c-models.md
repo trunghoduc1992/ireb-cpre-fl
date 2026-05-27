@@ -129,6 +129,8 @@ graph LR
     PaymentGW((Payment Gateway)) --> UC3
 ```
 
+*A use case diagram shows actors outside the system boundary interacting with use cases inside it. The system boundary rectangle separates what is built from who uses it.*
+
 **Use cases** model the dynamic interaction between an actor and the system from the actor's perspective. They are mostly written using form templates or expressed with UML activity diagrams.
 
 ## 3.4.3 Modeling Structure and Data (L3)
@@ -163,6 +165,8 @@ classDiagram
     OrderItem "0..*" --> "1" Product : refers to
 ```
 
+*The filled diamond on Order-to-OrderItem is composition: an OrderItem cannot exist without its Order. The plain arrows are associations with multiplicities showing how many instances participate.*
+
 ### Key UML Class Diagram Elements
 
 | Element | Notation | Meaning |
@@ -190,6 +194,8 @@ flowchart TD
     ShipOrder --> End([End])
     NotifyCustomer --> End
 ```
+
+*The diamond is a decision node: the flow branches based on stock availability. Each branch leads to a different action before reaching the final node. In the exam, expect to trace a path through such a diagram.*
 
 ### Key Activity Diagram Elements
 
@@ -220,6 +226,8 @@ stateDiagram-v2
     UnderReview --> Approved : approve
     Approved --> [*]
 ```
+
+*Each arrow is a transition labeled with an event. The "reject [needs rework]" transition includes a guard condition in brackets. A state machine shows all possible states and what triggers movement between them.*
 
 ### Transition Syntax
 

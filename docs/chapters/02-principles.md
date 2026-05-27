@@ -169,6 +169,8 @@ graph LR
   B <--> System
 ```
 
+*The three nested boundaries: the system boundary encloses the SuD, the context boundary encloses everything relevant to its requirements, and everything outside is the irrelevant environment.*
+
 When specifying a system, the Requirements Engineer must also consider:
 
 - **Changes in the context** that may impact system requirements

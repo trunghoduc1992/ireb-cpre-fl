@@ -100,6 +100,8 @@ stateDiagram-v2
     Changed --> InReview : resubmit
 ```
 
+*A work product moves through defined statuses. Note that a released (baselined) work product can only change through a formal change request, not by direct editing.*
+
 ## 6.3 Version Control (L2)
 
 Version control tracks all work products during their evolution. Any change should be reflected by a **new version**. Versioning allows the history to be traced back to the origin and any earlier version to be restored.
