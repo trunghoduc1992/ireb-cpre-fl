@@ -29,4 +29,8 @@ features:
     details: Quickly find any concept, term, or technique using the built-in search.
 ---
 
+::: warning Legacy Version
+This guide covers an older syllabus structure (9 chapters). For content aligned with the **current IREB CPRE-FL Syllabus v3.3.0** (April 2026), see the [v3.3.0 version](/v3/).
+:::
+
 <ProgressTracker />
