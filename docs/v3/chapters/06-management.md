@@ -132,9 +132,9 @@ Configurations have five properties:
 
 ## 6.5 Attributes and Views (L2)
 
-### Attributes
+### Requirements Attributes
 
-Attributes document important **metadata** for a work product. They enable team members and stakeholders to get the information they need at any point during the project.
+**Requirements attributes** document important **metadata** for a work product. They enable team members and stakeholders to get the information they need at any point during the project.
 
 The relevant set of attributes depends on the information needs of different stakeholders. Standards such as ISO/IEC/IEEE 29148 provide an overview of the most relevant attributes.
 
@@ -171,7 +171,7 @@ Traceability is a prerequisite for requirements management and is often explicit
 
 ## 6.7 Handling Change (L1)
 
-Requirements are not static. Changes happen due to many different reasons (Principle 7 — Evolution) and need to be handled properly.
+Requirements are not static. **Change management** is a controlled way to effect or deny a requested change to a work product. Changes happen due to many different reasons (Principle 7 — Evolution) and need to be handled properly.
 
 | Approach | How Changes Are Handled |
 |----------|------------------------|

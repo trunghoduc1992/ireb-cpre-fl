@@ -79,6 +79,8 @@ The goal of **Requirements Engineering (RE)** is to specify and manage requireme
 
 </div>
 
+Requirements are documented in a **requirements specification** — a work product that records the requirements for a system.
+
 ### Three Kinds of Requirements
 
 RE distinguishes three kinds of requirements:

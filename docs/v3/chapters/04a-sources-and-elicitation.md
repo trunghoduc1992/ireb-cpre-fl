@@ -77,7 +77,14 @@ See also: [Conflicts and Validation](04b-conflicts-and-validation)
 
 The quality and completeness of requirements depend greatly on the requirements sources involved. **Missing a relevant source** leads to incomplete understanding or incomplete requirements. Identification of sources is an iterative process requiring constant reconsideration.
 
-A shared understanding of the **system context** (Principle 4) is a prerequisite for identifying relevant sources.
+### System Boundary and Context Boundary
+
+A shared understanding of the context of the system to be developed is a prerequisite for identifying relevant sources. The area between the **system boundary** and the **context boundary** is the system context (Principle 4).
+
+- The **system boundary** separates the system under development from its surrounding context
+- The **context boundary** separates the relevant environment from the irrelevant environment
+
+Clarifying these boundaries and defining the external interfaces between the system and context elements are genuine Requirements Engineering tasks.
 
 ### Three Types of Requirements Sources
 
@@ -103,6 +110,8 @@ People or organizations **impacted** by a system should also be considered as in
 ### Stakeholder Identification and Management
 
 Systematic identification should take place at the **beginning** of a development venture and be managed as a **continuous activity**. This includes identifying both stakeholder roles and persons in those roles.
+
+**Stakeholder relationship management** is an effective way to counter problems with stakeholders. The benefit of systematic stakeholder management is that it ensures stakeholder rights and obligations are clear and their needs are sufficiently addressed.
 
 For end users: aggregate into groups (by similar roles, tasks, or responsibilities). When end users can be identified individually, choose **representatives**. Otherwise, define **personas**.
 
