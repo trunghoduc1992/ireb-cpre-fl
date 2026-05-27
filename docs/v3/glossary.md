@@ -1,10 +1,267 @@
+<script setup>
+import { ref, computed } from 'vue'
+
+const searchTerm = ref('')
+
+const terms = [
+  { term: 'Acceptance', definition: 'The process of assessing whether a system satisfies all its requirements.' },
+  { term: 'Acceptance criteria', definition: '1. The criteria that a work product must satisfy to be accepted by the stakeholders. 2. In agile development: Criteria that the implementation of a backlog item must satisfy in order to be accepted by the stakeholders.' },
+  { term: 'Acceptance test', definition: 'A test that assesses whether a system satisfies its requirements. Note: Typically used by customers or clients to determine whether or not to accept a system.' },
+  { term: 'Activity', definition: 'An action or a set of actions that a person or group performs to accomplish a task.' },
+  { term: 'Activity diagram', definition: 'A diagram type in UML which models the flow of actions in some part of a system, including data flows and areas of responsibility where necessary.' },
+  { term: 'Activity model', definition: 'A model of the flow of actions in some part of a system.' },
+  { term: 'Actor', definition: 'A person in some role, a system or a technical device in the context of a subject under consideration that interacts with that subject. Note: In RE, the subject under consideration typically is a system. In testing, it may be a test object.' },
+  { term: 'Adequacy (of a requirement)', definition: 'The degree to which a requirement expresses the stakeholders’ true and agreed desires and needs (i.e., those they had actually in mind when stating the requirement).' },
+  { term: 'Agile', definition: '1. In general: a. Able to move quickly and easily. b. Quick, smart, and clever. 2. In software development: A development approach which builds a product incrementally by dividing work into iterations of fixed duration (timeboxes). Note: Agile development is characterized by focusing on delivering a working product in each iteration, collaboration with stakeholders with frequent feedback and adaptation of plans after each iteration based on feedback and changed requirements.' },
+  { term: 'Ambiguity', definition: 'The contrary of →unambiguity.' },
+  { term: 'Application domain', definition: 'Those parts of the real world that are relevant for determining the context of a system.' },
+  { term: 'Artifact', definition: 'Synonym for work product.' },
+  { term: 'Association', definition: 'In UML: A relationship between two classes in a UML class model.' },
+  { term: 'Attribute', definition: 'A characteristic property of an entity or an object.' },
+  { term: 'Backlog', definition: '→ Product backlog, → sprint backlog. Typically used as a short form for product backlog.' },
+  { term: 'Backlog item', definition: 'An individual element of a backlog. Note: Backlog items include requirements, stories, tasks, features, epics, defects to be fixed, or refactorings to be done.' },
+  { term: 'Baseline', definition: 'A stable, change-controlled configuration of work products. Note: Baselines serve for release planning and release definition as well as for project management purposes such as effort estimation.' },
+  { term: 'Behavior', definition: 'The way in which a system reacts to stimuli, changes its state and produces observable results. Note: Stimuli may be events or changes of conditions. Their origin may be external or system-internal.' },
+  { term: 'Behavior model', definition: 'A model describing the behavior of a system, e.g., by a state machine.' },
+  { term: 'Branch', definition: 'A line of configurations or work product versions that forks away from the main line (or from another branch) at some point in time. Note: A branch is created by making a copy of some configuration or work product version and making this copy the root of the branch. A branch may be merged with the main line or with another branch at some later point in time.' },
+  { term: 'Burndown chart', definition: 'A diagram plotting the work items that remain to accomplish on a time scale.' },
+  { term: 'Business requirement', definition: 'A requirement stating a business goal, objective or need of an organization. Note: Business requirements typically state those business goals, objectives and needs that shall be achieved by employing a system or a collection of systems.' },
+  { term: 'Cardinality', definition: '1. In modeling: The minimum and maximum number of objects in a relationship. 2. In mathematics: The number of elements in a set. Note: In UML, the term multiplicity is used for cardinality.' },
+  { term: 'Change control board', definition: 'A committee of client and supplier representatives that decides on change requests. Abbreviation: CCB Note: The Change control board should not be confused with a change advisory board, which is a committee that evaluates change requests for a system in operation and typically has no decision power.' },
+  { term: 'Change management', definition: 'A controlled way to effect or deny a requested change of a work product.' },
+  { term: 'Change request', definition: 'In RE: A well-argued request for changing one or more baselined requirements.' },
+  { term: 'Changeability', definition: '→ Modifiability' },
+  { term: 'Class', definition: 'A representation of a set of objects of the same kind by describing the structure of the objects, the ways they can be manipulated and how they behave.' },
+  { term: 'Class diagram', definition: 'A diagrammatic representation of a class model.' },
+  { term: 'Class model', definition: 'A model consisting of a set of classes and relationships between them.' },
+  { term: 'Client', definition: 'A person or organization who orders a system, a product or a service to be built. Notes: 1. In most cases, clients are stakeholders. 2. Frequently, the persons or organizations who order a system are different from those who receive the system after it has been built. Therefore, we distinguish between clients and customers.' },
+  { term: 'Commonality', definition: 'The parts of a product line that are shared by all its members.' },
+  { term: 'Completeness (of requirements)', definition: '1. For a single requirement: The degree to which the specification of a requirement is self- contained. 2. For a work product covering multiple requirements: The degree to which the work product contains all known requirements that are relevant in the scope of this work product.' },
+  { term: 'Compliance', definition: 'The adherence of a work product to standards, conventions, regulations, laws, or similar prescriptions.' },
+  { term: 'Component', definition: '1. In general: A delimitable part of a system. 2. In software architecture: An encapsulated set of coherent objects or classes that jointly achieve some purpose. 3. In testing: A part of a system that can be tested in isolation. Note: When viewed in isolation, a component is a system by itself.' },
+  { term: 'Composition (in a technical context)', definition: '1. An item that is composed of a set of items; forming a whole-part relationship. 2. The act of composing a whole from a set of parts.' },
+  { term: 'Configuration', definition: 'A consistent set of logically coherent items. The items are individually identifiable work products or parts of work products in at most one version per item.' },
+  { term: 'Conflict (about requirements)', definition: '→ Requirements conflict' },
+  { term: 'Conformity', definition: 'The degree to which a work product conforms to regulations given in some standard.' },
+  { term: 'Consistency (of requirements)', definition: 'The degree to which a set of requirements is free of contradicting statements.' },
+  { term: 'Constraint (in RE)', definition: 'A requirement that limits the solution space beyond what is necessary for meeting the given functional requirements and quality requirements.' },
+  { term: 'Context', definition: '1. In general: The network of thoughts and meanings needed for understanding phenomena or utterances. 2. Especially in RE: The part of a system’s environment being relevant for understanding the system and its requirements. Note: Context in the second meaning is also called the system context.' },
+  { term: 'Context boundary', definition: 'The boundary between the context of a system and those parts of the application domain that are irrelevant for the system and its requirements. Note: The context boundary separates the relevant part of the environment of a system to be developed from the irrelevant part, i.e., the part that does not influence the system to be developed and, thus, does not have to be considered during Requirements Engineering.' },
+  { term: 'Context diagram', definition: 'A diagrammatic representation of a context model. Note: In Structured Analysis, the context diagram is the root of the dataflow diagram hierarchy.' },
+  { term: 'Context model', definition: 'A model describing a system in its context.' },
+  { term: 'Control flow', definition: 'The order in which a set of actions is executed.' },
+  { term: 'Correctness', definition: 'The degree to which the information contained in a work product is provably true. Note: In RE, correctness is sometimes used as a synonym for adequacy, particularly when validating a requirement rigorously against formally stated properties in the context of a system.' },
+  { term: 'Customer', definition: 'A person or organization who receives a system, a product or a service. Notes: 1. In most cases, customers are stakeholders. 2. Frequently, the persons or organizations who order a system are different from those who receive the system after it has been built. Therefore, we distinguish between clients and customers. 3. “Receiving” includes buying, being provided with and obtaining for free. 4. When customer and client are the same person or organization, the term customer is used in RE contexts.' },
+  { term: 'Customer requirements specification', definition: 'A coarse description of the required capabilities of a system from the customer’s perspective. Note: A customer requirements specification is usually supplied by the customer.' },
+  { term: 'Data flow', definition: 'A sequence of data items flowing from a producer to a consumer.' },
+  { term: 'Data flow diagram', definition: 'A diagrammatic representation of a data flow model. Abbreviation: DFD' },
+  { term: 'Data flow model', definition: 'A model that describes the functionality of a system by activities, data stores and data flows. Note: Incoming data flows trigger activities which then consume the received data, transform them, read/write persistent data held in data stores and then produce new data flows which may be intermediate results that trigger other activities or final results that leave the system.' },
+  { term: 'Decision table', definition: 'A tabular representation of a complex decision, specifying which actions to perform for the possible combinations of condition values.' },
+  { term: 'Defect', definition: 'An imperfection or deficiency in a work product that impairs its intended use. Synonyms: bug, fault' },
+  { term: 'Design', definition: '1. A plan or drawing produced to show how something will look, function or be structured before it is made. 2. The activity of creating a design. 3. A decorative pattern [This meaning does not apply in the software engineering domain]. Notes: 1. In software product development, we distinguish between creative design which shapes the look and feel of the product, i.e., its perceivable form, function and quality, and technical design (also called software design) which determines the inner structure of the product, in particular the software architecture. 2. The creative design of products is also called product design. 3. The creative design of digital solutions is called digital design.' },
+  { term: 'Document template', definition: 'A template providing a predefined skeleton structure for a document. (→ requirements template) Note: In RE, document templates can be used to structure requirements documents.' },
+  { term: 'Domain', definition: 'A range of relevant things (for some given matter); for example, an application domain.' },
+  { term: 'Domain model', definition: 'A model describing phenomena in an application domain. Notes: 1. In RE, domain models are created with the intention to understand the application domain in which a planned system will be situated. 2. Static domain models specify (business) objects and their relationships in a domain of interest. 3. Domain story models specify visual stories about how actors interact with devices, artifacts, and other items in a domain.' },
+  { term: 'Domain requirement', definition: 'A domain property in the context of a system that is required to hold.' },
+  { term: 'Effectiveness', definition: 'The degree to which an item produces the intended results. Note: In RE, effectiveness frequently is the degree to which a system enables its users to achieve their goals.' },
+  { term: 'Efficiency', definition: 'The degree to which resources are expended in relation to results achieved.' },
+  { term: 'Elaboration (of requirements)', definition: 'An umbrella term for requirements elicitation, negotiation and validation.' },
+  { term: 'Elicitation (of requirements)', definition: '→ Requirements elicitation' },
+  { term: 'Entity', definition: '1. In general: Anything which is perceivable or conceivable (→ item). 2. In entity-relationship-modeling: An individual item which has an identity and does not depend on another item (→ object).' },
+  { term: 'Entity-relationship diagram', definition: 'A diagrammatic representation of an entity-relationship model. Abbreviation: ERD' },
+  { term: 'Entity-relationship model', definition: 'A model of data that are relevant for a system or of the data of an application domain, consisting of a set of entity types that are each characterized by attributes and linked by relationships. Abbreviation: ER Model' },
+  { term: 'Epic', definition: 'In agile development: A description of a stakeholder need which is typically larger than what can be implemented in a single iteration. Note: Epics typically represent coarse-grained requirements in a product backlog.' },
+  { term: 'Error', definition: '1. A human action that produces an incorrect result. 2. A discrepancy between an observed behavior or result and the specified behavior or result. Note: In practice, both meanings are used. Where needed, the meaning of error can be disambiguated by using human error and observed error or observed fault, respectively.' },
+  { term: 'Evolutionary prototype', definition: 'A pilot system forming the core of a system to be developed.' },
+  { term: 'Exploratory prototype', definition: 'A throwaway prototype used to create shared understanding, clarify requirements or validate requirements.' },
+  { term: 'Fault tolerance', definition: 'The capability of a system to operate as intended despite the presence of (hardware or software) faults. Note: Fault tolerance may be stated as a quality requirement.' },
+  { term: 'Feasibility (of a requirement)', definition: 'The degree to which a requirement for a system can be implemented under existing constraints.' },
+  { term: 'Feature', definition: 'A distinguishing characteristic of a system that provides value for stakeholders. Notes: 1. A feature typically comprises several requirements and is used for communicating with stakeholders on a higher level of abstraction and for expressing variable or optional characteristics. 2. In agile development, some approaches denote medium-grained requirements as features.' },
+  { term: 'Feature diagram', definition: 'A diagrammatic representation of a feature model.' },
+  { term: 'Feature model', definition: 'A model describing the variable features of a product line, including their relationships and dependencies.' },
+  { term: 'Form template', definition: 'A template providing a form with predefined fields to be filled-in. (→ requirements template) Note: In RE, form templates can be used to specify use cases or quality requirements.' },
+  { term: 'Functional requirement', definition: 'A requirement concerning a result or behavior that shall be provided by a function of a system.' },
+  { term: 'Functionality', definition: 'The capabilities of a system as stated by its functional requirements.' },
+  { term: 'Glossary', definition: 'A collection of definitions of terms that are relevant in some domain. Note: Frequently, a glossary also contains cross-references, synonyms, homonyms, acronyms, and abbreviations.' },
+  { term: 'Goal', definition: 'A desired state of affairs (that a stakeholder wants to achieve). Note: Goals describe intentions of stakeholders. They may conflict with one another.' },
+  { term: 'Goal model', definition: 'A model representing a set goals, sub-goals and the relationships between them. Note: Goal models may also include tasks and resources needed to achieve a goal, actors who want to achieve a goal, and obstacles that impede the achievement of a goal.' },
+  { term: 'Homonym', definition: 'A term looking identical to another term but having a different meaning. Note: For example, bill as a bank note and bill as a list (of materials) are homonyms.' },
+  { term: 'Increment (in software development)', definition: 'An addition to a system under development that extends, enhances or refactors (refactoring) the existing parts of the system. Note: In agile development, every iteration produces an increment.' },
+  { term: 'Inspection', definition: 'A formal review of a work product by a group of experts according to given criteria, following a defined procedure.' },
+  { term: 'Interaction model', definition: 'A model describing the interaction between a system and its environment or the interaction of items within a system. Note: Scenarios and use cases, for example, model the interaction between a system and its environment. A sequence diagram, for example, can model the interaction between selected objects within a system.' },
+  { term: 'Item', definition: 'Anything which is perceivable or conceivable. Synonyms: → entity, → object' },
+  { term: 'Iteration', definition: '1. In general: The repetition of something, for example, a procedure, a process or a piece of program code. 2. In agile development: A timeboxed unit of work in which a development team implements an increment to the system under development. Note: In agile development, iteration and sprint are frequently used as synonyms.' },
+  { term: 'Kind of requirement', definition: 'A classification of requirements according to their kind into system requirements (consisting of functional requirements, quality requirements and constraints), project requirements, and process requirements. Notes: 1. RE is primarily concerned with system requirements. 2. Quality requirements and constraints are also called non-functional requirements.' },
+  { term: 'Language', definition: 'A structured set of signs for expressing and communicating information. Note: Signs are any elements that are used for communication: spoken or written words or expressions, symbols, gestures, sounds, etc.' },
+  { term: 'Maintainability', definition: 'The ease with which a system can be modified by the intended maintainers. Note: Maintainability may be stated as a quality requirement.' },
+  { term: 'Method', definition: 'The systematic application of a technique (or a set of techniques) to achieve an objective or create a work product.' },
+  { term: 'Methodology', definition: '1. The systematic study of methods in a particular field, in particular, how to select, apply or evaluate methods systematically in a given situation. 2. A set of methods being applied in some combination.' },
+  { term: 'Mock-up (of a digital system)', definition: 'A medium-fidelity prototype that demonstrates characteristics of a user interface without implementing any real functionality. Note: In RE, a mock-up primarily serves for specifying and validating user interfaces.' },
+  { term: 'Model', definition: 'An abstract representation of an existing part of reality or a part of reality to be created. Notes: 1. The notion of reality includes any conceivable set of elements, phenomena, or concepts, including other models. 2. Models are always built for specific purposes in a specific context. 3. With respect to a model, the modeled part of reality is called the original. 4. In RE, requirements can be specified with models.' },
+  { term: 'Modeling language', definition: 'A language for expressing models of a certain kind. May be textual, graphic, symbolic or some combination thereof.' },
+  { term: 'Modifiability', definition: 'The degree to which a work product or system can be modified without degrading its quality.' },
+  { term: 'Multiplicity', definition: '→ Cardinality' },
+  { term: 'Native prototype', definition: 'A high-fidelity prototype that implements critical parts of a system to an extent that stakeholders can use the prototype to see whether the prototyped part of the system will work and behave as expected.' },
+  { term: 'Natural language', definition: 'A language that people use for speaking and writing in everyday life. Note: This is in contrast to artificial languages that people have deliberately created for specific purposes such as programming or specifying.' },
+  { term: 'Necessity (of a requirement)', definition: 'The degree to which an individual requirement is a necessary part of the requirements specification of a system.' },
+  { term: 'Negotiation', definition: '→ Requirements negotiation' },
+  { term: 'Non-functional requirement', definition: 'A quality requirement or a constraint. Note: Performance requirements may be regarded as another category of non-functional requirements. In this glossary, performance requirements are considered to be a sub-category of quality requirements.' },
+  { term: 'Object', definition: '1. In general: Anything which is perceivable or conceivable (→ item). 2. In software engineering: an individual item which has an identity, is characterized by the values of its attributes and does not depend on another item (→ entity).' },
+  { term: 'Object diagram', definition: 'A diagrammatic representation of an object model.' },
+  { term: 'Object model', definition: 'A model describing a set of objects and relationships between them.' },
+  { term: 'Performance requirement', definition: 'A requirement describing a performance characteristic (timing, speed, volume, capacity, throughput, ...). Note: In this glossary, performance requirements are regarded as a sub-category of quality requirements. However, they can also be considered as a kind of requirements of its own.' },
+  { term: 'Persona', definition: 'A fictitious character representing a group of people with similar needs, values and habits who are expected to use a system or benefit from it in a similar way.' },
+  { term: 'Phrase template', definition: 'A template for the syntactic structure of a phrase that expresses an individual requirement or a user story in natural language (→ requirements template, → user story template)' },
+  { term: 'Portability', definition: 'The ease with which a system can be transferred to another platform while preserving its characteristics.' },
+  { term: 'Practice', definition: 'A proven way of how to carry out certain types of tasks or activities.' },
+  { term: 'Prioritization', definition: 'The process of assigning priorities to a set of items.' },
+  { term: 'Priority', definition: 'The level of importance assigned to an item, e.g., a requirement or a defect, according to certain criteria.' },
+  { term: 'Problem', definition: 'A difficulty, open question or undesirable condition that needs investigation, consideration, or solution.' },
+  { term: 'Process', definition: 'A set of interrelated activities performed in a given order to process information or materials. Note: The notion of process includes business processes (e.g., how to commission and send ordered goods to customers), information processes (e.g., how to deliver records from a database that match a given query), and technical processes (e.g., cruise control in a car).' },
+  { term: 'Process model', definition: 'A model describing a process or a set of related processes.' },
+  { term: 'Process pattern', definition: 'An abstract, reusable model of a process which can be used to configure and instantiate a concrete process for a given situation and context.' },
+  { term: 'Product (in the context of software)', definition: 'A software-based system or a service provided by a system which is developed and marketed by a supplier and used by customers.' },
+  { term: 'Product backlog', definition: 'An ordered, typically prioritized collection of work items that a development team has to work on when developing or evolving a system. Note: Items include requirements, defects to be fixed, or refactorings to be done.' },
+  { term: 'Product line', definition: 'A jointly managed set of systems (provided as products or services) that share a common core and have a configurable set of variants for satisfying needs of particular customers or market segments. Note: The points in a product line where there is more than one variant to select from are called variation points. Synonym: Product family' },
+  { term: 'Product owner', definition: 'A person responsible for a product in terms of functionality, value and risk. Note: The product owner maintains and prioritizes the product backlog, makes sure that the stakeholders’ requirements as well as market needs are elicited and adequately documented in the product backlog and represents the stakeholders when communicating with the development team.' },
+  { term: 'Prototype', definition: '1. In manufacturing: A piece which is built prior to the start of mass production. 2. In software and systems engineering: A preliminary, partial realization of certain characteristics of a system. 3. In design: A preliminary, partial instance of a design solution. Notes: 1. In RE, prototypes are used as a means for requirements elicitation (see specification by example) and validation. 2. Prototypes in RE can be classified ▪ with respect to their degree of fidelity into native prototypes, mock-ups and wireframes; ▪ with respect to their purpose into exploratory prototypes and evolutionary prototypes.' },
+  { term: 'Prototyping', definition: 'A process that involves the creation and evaluation of prototypes.' },
+  { term: 'Quality', definition: '1. In general: The degree to which a set of inherent characteristics of an item fulfills requirements. 2. In systems and software engineering: The degree to which a system satisfies stated and implied needs of its stakeholders. Note: Quality in this definition means fitness for intended use, as stated in the requirements. This is in contrast to the colloquial notion of quality which is typically connoted with goodness or excellence.' },
+  { term: 'Quality criteria (in RE)', definition: 'A set of expected qualities of good requirements or good RE work products. Notes: 1. There is no general agreement about which sets of qualities form the quality criteria to be used in RE. 2. The set of quality criteria to be applied in a given project depends on the characteristics and context of the project.' },
+  { term: 'Quality requirement', definition: 'A requirement that pertains to a quality concern that is not covered by functional requirements.' },
+  { term: 'Redundancy', definition: 'Multiple occurrence of the same information or resource.' },
+  { term: 'Refactoring', definition: 'The improvement of the internal quality of source code, particularly the structure of the code, without changing its observable behavior.' },
+  { term: 'Release', definition: 'A configuration that has been released for installation and use by customers.' },
+  { term: 'Reliability', definition: 'The degree to which a system performs specified functions under specified conditions for a specified period of time. Note: Reliability may be stated as a quality requirement.' },
+  { term: 'Requirement', definition: '1. A need perceived by a stakeholder. 2. A capability or property that a system shall have. 3. A documented representation of a need, capability or property.' },
+  { term: 'Requirements analysis', definition: '1. Analysis of elicited requirements in order to understand and document them. 2. Synonym for Requirements Engineering.' },
+  { term: 'Requirements baseline', definition: 'A baseline for a set of requirements.' },
+  { term: 'Requirements configuration', definition: '→ Configuration' },
+  { term: 'Requirements conflict', definition: '1. A situation where two or more requirements cannot be satisfied together. 2. A situation where two or more stakeholders disagree about certain requirements. Note: Requirements conflicts have to be solved by requirements negotiation.' },
+  { term: 'Requirements discovery', definition: '→ Requirements elicitation' },
+  { term: 'Requirements document', definition: 'A document consisting of a requirements specification. Note: Requirements document is frequently used as a synonym for requirements specification.' },
+  { term: 'Requirements elicitation', definition: 'The process of seeking, capturing and consolidating requirements from available sources, potentially including the re-construction or creation of requirements.' },
+  { term: 'Requirements Engineer', definition: 'A person who – in collaboration with stakeholders – elicits, documents, validates, and manages requirements. Note: In most cases, requirements engineer is a role and not a job title.' },
+  { term: 'Requirements Engineering', definition: 'The systematic and disciplined approach to the specification and management of requirements with the goal of understanding the stakeholders’ desires and needs and minimizing the risk of delivering a system that does not meet these desires and needs. Abbreviation: RE' },
+  { term: 'Requirements management', definition: 'The process of managing existing requirements and requirements-related work products, including the storing, changing and tracing of requirements (traceability).' },
+  { term: 'Requirements model', definition: 'A model that has been created with the purpose of specifying requirements.' },
+  { term: 'Requirements negotiation', definition: 'A process where stakeholders are working toward reaching an agreement to resolve requirements conflicts.' },
+  { term: 'Requirements source', definition: 'The source from which a requirement has been derived. Note: Typical sources are stakeholders, documents, existing systems and observations.' },
+  { term: 'Requirements specification', definition: 'A systematically represented collection of requirements, typically for a system, that satisfies given criteria. Notes: 1. In some situations we distinguish between a customer requirements specification (typically written by the customer) and a system requirements specification or software requirements specification (written by the supplier). 2. Requirements specification may also denote the process of specifying (eliciting, documenting and validating) requirements.' },
+  { term: 'Requirements template', definition: 'A template for specifying requirements. Note: In RE, several forms of templates are used. Phrase templates are used for specifying individual requirements or user stories. Form templates can be used to specify use cases or quality requirements. Document templates provide a predefined structure for requirements documents.' },
+  { term: 'Review', definition: 'An evaluation of a work product by an individual or a group in order to find problems or suggest improvements. Note: Evaluation may be performed with respect to both contents and conformance.' },
+  { term: 'Risk', definition: 'A possible event that threatens the success of an endeavor. Note: A risk is typically assessed in terms of its probability and potential damage.' },
+  { term: 'Role', definition: '1. In general: A part played by a person in a given context. 2. In UML class models: The parts played by the linked objects in an association.' },
+  { term: 'Safety', definition: 'The capability of a system to achieve an acceptable level of probability that the system, under defined conditions, will not reach a state in which human life, health, property, or the environment is endangered. Note: Safety requirements may be stated as quality requirements or in terms of functional requirements.' },
+  { term: 'Scenario', definition: '1. In general: A description of a potential sequence of events that lead to a desired (or unwanted) result. 2. In RE: An ordered sequence of interactions between partners, in particular between a system and external actors. May be a concrete sequence (instance scenario) or a set of potential sequences (type scenario, use case).' },
+  { term: 'Scope (of a system development)', definition: 'The range of things that can be shaped and designed when developing a system.' },
+  { term: 'Scrum', definition: 'A popular process framework for agile development of a system.' },
+  { term: 'Security', definition: 'The degree to which a system protects its data and resources against unauthorized access or use and secures unobstructed access and use for its legitimate users. Note: Security requirements may be stated as quality requirements or in terms of functional requirements.' },
+  { term: 'Semantics', definition: 'The meaning of a sign or a set of signs in a language.' },
+  { term: 'Semi-formal', definition: 'Something which is formal to some extent, but not completely. Note: A work product is called semi-formal if it contains formal parts, but isn’t formalized totally. Typically, a semi-formal work product has a defined syntax, while the semantics is partially defined only.' },
+  { term: 'Sequence diagram', definition: 'A diagram type in UML which models the interactions between a selected set of objects and/or actors in the sequential order in which those interactions occur.' },
+  { term: 'Service', definition: 'The provision of some functionality to a human or a system by a provider (a system, organization, group or individual) that delivers value to the receiver. Note: In systems engineering, software engineering and Requirements Engineering, services are typically provided by a system for a user or another system.' },
+  { term: 'Software requirements specification', definition: 'A requirements specification pertaining to a software system. Abbreviation: SRS' },
+  { term: 'Source (of a requirement)', definition: '→ Requirements source' },
+  { term: 'Specification', definition: '1. As a work product: A systematically represented description of the properties of an item (a system, a device, etc.) that satisfies given criteria. 2. As a process: the process of specifying (eliciting, documenting and validating) the properties of an item. Note: A specification may be about required properties (requirements specification) or implemented properties (e.g., a technical product specification).' },
+  { term: 'Specification by example', definition: 'A technique that specifies test cases and requirements for a system by providing examples of how the system should behave.' },
+  { term: 'Specification language', definition: 'An artificial language that has been created for expressing specifications.' },
+  { term: 'Spike', definition: 'In agile development: A task aimed at gaining insight or gathering information, rather than at producing a product increment.' },
+  { term: 'Sprint', definition: 'An iteration in agile development, particularly when using Scrum.' },
+  { term: 'Sprint backlog', definition: 'A set of product backlog items that have been selected to be implemented in the current sprint.' },
+  { term: 'Stakeholder', definition: 'A person or organization who influences a system’s requirements or who is impacted by that system. Note: Influence can also be indirect. For example, some stakeholders may have to follow instructions issued by their managers or organizations.' },
+  { term: 'Stakeholder requirement', definition: 'A requirement expressing a stakeholder desire or need. Note: Stakeholder requirements are typically written by stakeholders and express their desires and needs from their perspective.' },
+  { term: 'Standard', definition: 'A formal, possibly mandatory set of regulations for how to interpret, develop, manufacture, or execute something. Note: In RE, there are RE-relevant standards issued by ISO/IEC and IEEE.' },
+  { term: 'State machine', definition: 'A model describing the behavior of a system by a finite set of states and state transitions. State transitions are triggered by events and can in turn trigger actions and new events.' },
+  { term: 'State machine diagram', definition: 'A diagrammatic representation of a state machine.' },
+  { term: 'Statechart', definition: 'A state machine having states that are hierarchically and/or orthogonally decomposed.' },
+  { term: 'State-transition diagram', definition: '→ State machine diagram.' },
+  { term: 'Steering committee', definition: 'A committee that supervises a project.' },
+  { term: 'Story (in an Agile context)', definition: 'A short narrative describing a piece of required functionality or quality. Notes: 1.' },
+  { term: 'Stories may describe', definition: '▪ funtionality or quality from a user’s perspective (user story), ▪ required infrastructure functionality or quality, ▪ work items that enable required features or properties of a system. 2. In agile development, stories are frequently considered to be atomic backlog items, that is, items which are not further decomposed in the backlog.' },
+  { term: 'Story map', definition: 'A two-dimensional arrangement of stories or other backlog items. Note: A story map helps understand the functionality of a system, identify gaps and plan releases.' },
+  { term: 'Storyboard', definition: 'A series of sketches or pictures that visualize the execution of a scenario.' },
+  { term: 'Structured Analysis', definition: 'An approach for specifying the functionality of a system based on a hierarchy of data flow diagrams. Data flows as well as persistent data are defined in a data dictionary. A context diagram models the sources of incoming and the destinations of outgoing data flows.' },
+  { term: 'Supplier', definition: 'A person or organization who delivers a product or service to a customer or a client. Synonym A word having the same meaning as another word.' },
+  { term: 'Syntax', definition: 'The rules for constructing structured signs in a language.' },
+  { term: 'System', definition: '1. In general: A principle for ordering and structuring. 2. In engineering: A coherent, delimitable set of elements that – by coordinated action – achieve some purpose. Notes: 1. A system may comprise other systems or components as sub-systems. 2. The purposes achieved by a system may be delivered by ▪ deploying the system at the place(s) where it is used, ▪ selling/providing the system as a product to its users, ▪ having providers who offer the system’s capabilities as services to users. 3. Systems containing both software and physical components are called cyber-physical systems. 4. Systems spanning software, hardware, people and organizational aspects are called socio- technical systems. Important: In this glossary, system is used as an umbrella term which includes • Products provided to customers, • Services made available to customers, • Other work products such as devices, procedures or tools that help people or organizations achieve some goal, • System components or compositions of systems.' },
+  { term: 'System boundary', definition: 'The boundary between a system and its surrounding context. Notes: 1. The system boundary delimits the system as it shall be after its implementation and deployment. 2. At the system boundary, the external interfaces between the system and its context have to be defined. 3. The system boundary frequently coincides with the scope of a system (which denotes the range of things that can be shaped and designed). However, this is not always the case: there may be components within the system boundary that have to be re-used as they are (i.e., cannot be shaped nor designed), while in the system context there may be things that can be re-designed when the system is developed (which means that they are in scope).' },
+  { term: 'System context', definition: 'The part of a system’s environment that is relevant for the definition as well as the understanding of the requirements of a system to be developed.' },
+  { term: 'System requirement', definition: 'A requirement pertaining to a system.' },
+  { term: 'System requirements specification', definition: 'A requirements specification pertaining to a system. Note: A system requirements specification is frequently considered to be a synonym for requirements specification. Abbreviation: SyRS' },
+  { term: 'Task', definition: 'A coherent chunk of work to be done.' },
+  { term: 'Technique', definition: 'A documented set of coherent actions for accomplishing a task or achieving an objective.' },
+  { term: 'Timebox', definition: 'A fixed, non-extendable amount of time for completing a set of tasks.' },
+  { term: 'Tool (in software engineering)', definition: 'A (software) system that helps develop, operate and maintain systems. Note: In RE, tools support requirements management as well as modeling, documenting, and validating requirements.' },
+  { term: 'Traceability', definition: '1. In general: The ability to establish explicit relationships between related work products or items within work products. 2. In RE: The ability to trace a requirement • back to its origins, • forward to its implementation in design and code and its associated tests, • to requirements it depends on (and vice-versa).' },
+  { term: 'UML', definition: 'Abbreviation for Unified Modeling Language, a standardized language for modeling problems or solutions.' },
+  { term: 'Unambiguity (of requirements)', definition: 'The degree to which a requirement is expressed such that it cannot be understood differently by different people.' },
+  { term: 'Understandability', definition: 'The degree to which an item is comprehensible to its intended users. Note: Typical items are: a system, a work product, or a part thereof.' },
+  { term: 'Usability', definition: 'The degree to which a system can be used by specified users to achieve specified goals in a specified context of use. Note: Usability particularly includes the capability of a system to be understood, learned, used, and liked by its intended users.' },
+  { term: 'Use case', definition: 'A set of possible interactions between external actors and a system that provide a benefit for the actor(s) involved. Note: Use cases specify a system from a user’s (or other external actor’s) perspective: every use case describes some functionality that the system must provide for the actors involved in the use case.' },
+  { term: 'Use case diagram', definition: 'A diagram type in UML that models the actors and the use cases of a system. Note: The boundary between the actors and the use cases constitutes the system boundary.' },
+  { term: 'Use case model', definition: 'A model consisting of a set of use cases, typically together with a use case diagram.' },
+  { term: 'User', definition: 'A person who uses the functionality provided by a system. Note: Users (also called end users) always are stakeholders of a system.' },
+  { term: 'User requirement', definition: 'A requirement expressing a user need. Note: User requirements are typically about what a system should do for certain users and how they can interact with the system. User requirements are a subset of stakeholder requirements.' },
+  { term: 'User story', definition: 'A short narrative describing a need from a user’s perspective together with the expected benefit when this need is satisfied. Also see → story. Notes: 1. User stories are typically written in natural language using the user story template and are usually accompanied by acceptance criteria. 2. In agile development, user stories serve as a user-oriented way to discuss and formulate requirements. They are typically considered to be atomic backlog items, that is, items which are not further decomposed in the backlog (see → story).' },
+  { term: 'User story template', definition: 'A phrase template of the form As a <role/person>, I want <something> so that <benefit>. Notes: 1. Most user stories are written using this template. 2. In agile development, this template is also used for expressing other backlog items that communicate stakeholder needs, for example, epics. 3. Some authors replace <something> by more concrete concepts such as <goal>, <desire>, or <target>.' },
+  { term: 'Validation', definition: 'The process of confirming that an item (a system, a work product or a part thereof) matches its stakeholders’ needs. Note: In RE, validation is the process of confirming that the documented requirements match their stakeholders’ needs; in other words: whether the right requirements have been specified.' },
+  { term: 'Variability', definition: '1. The degree to which a system can be changed or customized. 2. In product lines: The features that can differ among the members of the product line.' },
+  { term: 'Variant', definition: 'One of the possible forms that an item (e.g., a requirement) may have.' },
+  { term: 'Variation point', definition: 'A point in a product line where an element of the product line (typically a variable or a feature) can be chosen from a set of variants.' },
+  { term: 'Velocity', definition: 'In agile development: The average amount of work that a team is able to complete in an iteration. Note: Agile teams decide how to meaure amount of work. For example, they may measure the average number of stories implemented per iteration, or, if they measure the size of stories with so- called story points, the average number of story points implemented per iteration.' },
+  { term: 'Verifiability (of requirements)', definition: 'The degree to which the fulfillment of a requirement by an implemented system can be verified. Note: Such verification can be performed, for example, by defining acceptance test cases, measurements or inspection procedures.' },
+  { term: 'Verification', definition: 'The process of confirming that an item (a system, a work product, or a part thereof) fulfills its specification. Note: Requirements verification is the process of confirming that the requirements have been documented properly and satisfy the quality criteria for requirements; in other words, whether the requirements have been specified right.' },
+  { term: 'Version', definition: 'An occurrence of an item which exists in multiple, time-ordered occurrences where each occurrence has been created by modifying one of its previous occurrences.' },
+  { term: 'View', definition: 'An excerpt from a work product, containing only those parts one is currently interested in. Note: A view can abstract or aggregate parts of the work product.' },
+  { term: 'Viewpoint', definition: 'A certain perspective on the requirements of a system. Note: Typical viewpoints are perspectives that a stakeholder or stakeholder group has (for example, an end user’s perspective or an operator’s perspective). However, there can also be topical viewpoints such as a security viewpoint.' },
+  { term: 'Vision (for a system or product)', definition: 'A conceptual imagination of a future system or product, describing its key characteristics and how it will create value for its users.' },
+  { term: 'Walkthrough', definition: 'A review in which the author of a work product leads the reviewers systematically through the work product and the reviewers ask questions and make comments about possible issues.' },
+  { term: 'Wireframe', definition: 'A low-fidelity prototype built with simple materials that primarily serves for discussing and validating requirements, design ideas or user interface concepts. Note: When prototyping digital systems, wireframes are typically built with paper. Such prototypes are also called paper prototypes.' },
+  { term: 'Work product', definition: 'A recorded, intermediate or final result generated in a work process. Synonym: Artifact' },
+]
+
+const filteredTerms = computed(() => {
+  if (!searchTerm.value) return terms
+  const q = searchTerm.value.toLowerCase()
+  return terms.filter(
+    t => t.term.toLowerCase().includes(q) || t.definition.toLowerCase().includes(q)
+  )
+})
+</script>
+
 # Glossary (Syllabus v3.3.0)
 
 ::: info Source
-Based on the **IREB CPRE Glossary v2.2.0** (English). Verbatim definitions from the official glossary.
+Verbatim definitions from the **IREB CPRE Glossary v2.2.0** (October 2025) by Martin Glinz.
 [Download official glossary](https://cpre.ireb.org/en/downloads-and-resources/downloads)
 :::
 
-::: warning Under Construction
-This glossary is being written. Definitions will be sourced verbatim from the official IREB CPRE Glossary v2.2.0.
-:::
+A searchable reference of 215 terms from the official IREB CPRE glossary.
+
+<div style="margin: 1.5rem 0;">
+  <input
+    v-model="searchTerm"
+    type="text"
+    placeholder="Search terms..."
+    style="
+      width: 100%;
+      padding: 0.6rem 1rem;
+      border: 1px solid var(--vp-c-divider);
+      border-radius: 8px;
+      background: var(--vp-c-bg);
+      color: var(--vp-c-text-1);
+      font-size: 1rem;
+      outline: none;
+    "
+  />
+</div>
+
+<div v-if="filteredTerms.length === 0" style="color: var(--vp-c-text-2); padding: 1rem;">
+  No terms match your search.
+</div>
+
+<div v-for="t in filteredTerms" :key="t.term" style="margin-bottom: 1rem; padding: 0.75rem 1rem; border: 1px solid var(--vp-c-divider); border-radius: 8px; background: var(--vp-c-bg-soft);">
+  <strong>{{ t.term }}</strong>
+  <p style="margin: 0.25rem 0 0 0; color: var(--vp-c-text-2); font-size: 0.95em;">{{ t.definition }}</p>
+</div>

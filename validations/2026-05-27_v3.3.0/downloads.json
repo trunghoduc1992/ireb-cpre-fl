@@ -31,6 +31,16 @@
       "why": "Official practice exam used to verify exam format (45 questions, 70 points, A/P/K types), question distribution across 7 EUs, and validate repo's exam-tips accuracy.",
       "size_bytes": 415557,
       "text_extracted": true
+    },
+    {
+      "filename": "ireb_cpre_glossary_EN_v2.2.0.pdf",
+      "original_url": "https://cockpit-v1.ireb.org/media/pages/downloads/cpre-glossary/04ef30da15-1760005471/ireb_cpre_glossary_en_2.2.pdf",
+      "title": "IREB CPRE Glossary v2.2.0 (English)",
+      "version": "2.2.0",
+      "date": "2025-10-01",
+      "why": "Official glossary used to create the v3.3.0 glossary page with verbatim term definitions. 215 terms extracted and parsed into the searchable glossary component.",
+      "size_bytes": 669500,
+      "text_extracted": true
     }
   ],
   "extraction_tool": "PyMuPDF (fitz) v1.27.2.3",
