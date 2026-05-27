@@ -12,8 +12,8 @@ hero:
       text: Study Plan
       link: /v3/study-plan
     - theme: alt
-      text: Official Resources
-      link: /v3/resources
+      text: Glossary
+      link: /v3/glossary
 features:
   - icon: "📖"
     title: 7 Educational Units
