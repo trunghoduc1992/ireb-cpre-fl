@@ -3,6 +3,41 @@ import { onMounted, onUnmounted } from 'vue'
 export function useSearchKeys() {
   if (typeof window === 'undefined') return
 
+  let observer
+
+  // Add hints for our custom shortcuts to the modal's footer row.
+  function injectHints() {
+    const shortcuts = document.querySelector(
+      '.VPLocalSearchBox .search-keyboard-shortcuts'
+    )
+    if (!shortcuts || shortcuts.querySelector('.custom-search-hint')) return
+
+    // VitePress styles the kbd caps with scoped CSS keyed on a data-v-* hash.
+    // Mirror that attribute onto our injected nodes so the styling applies.
+    const scopeAttr = shortcuts
+      .getAttributeNames()
+      .find(n => n.startsWith('data-v-'))
+    const scope = scopeAttr ? ` ${scopeAttr}` : ''
+
+    // shortcuts.insertAdjacentHTML(
+    //   'beforeend',
+    //   `<span${scope} class="custom-search-hint"><kbd${scope}>alt-k</kbd><kbd${scope}>alt-j</kbd> to navigate</span>` +
+    //     `<span${scope} class="custom-search-hint"><kbd${scope}>ctrl-\`</kbd> to toggle layout</span>`
+    // )
+    // shortcuts.insertAdjacentHTML(
+    //   'beforeend',
+    //   `<span${scope} class="custom-search-hint"><kbd${scope}>Alt</kbd><kbd${scope}>K</kbd> up</span>` +
+    //     `<span${scope} class="custom-search-hint"><kbd${scope}>Alt</kbd><kbd${scope}>J</kbd> down</span>` +
+    //     `<span${scope} class="custom-search-hint"><kbd${scope}>Ctrl</kbd><kbd${scope}>\`</kbd> to toggle layout</span>`
+    // )
+    shortcuts.insertAdjacentHTML(
+      'beforeend',
+      `<span${scope} class="custom-search-hint"><kbd${scope}>alt-k</kbd> up</span>` +
+        `<span${scope} class="custom-search-hint"><kbd${scope}>alt-j</kbd> down</span>` +
+        `<span${scope} class="custom-search-hint"><kbd${scope}>ctrl-\`</kbd> to toggle layout</span>`
+    )
+  }
+
   function handler(e) {
     const modal = document.querySelector('.VPLocalSearchBox')
     if (!modal) return
@@ -57,6 +92,14 @@ export function useSearchKeys() {
     }
   }
 
-  onMounted(() => window.addEventListener('keydown', handler))
-  onUnmounted(() => window.removeEventListener('keydown', handler))
+  onMounted(() => {
+    window.addEventListener('keydown', handler)
+    // The modal mounts lazily on open, so watch for it and inject hints.
+    observer = new MutationObserver(injectHints)
+    observer.observe(document.body, { childList: true, subtree: true })
+  })
+  onUnmounted(() => {
+    window.removeEventListener('keydown', handler)
+    observer?.disconnect()
+  })
 }
